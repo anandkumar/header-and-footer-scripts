@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Header and Footer Scripts
-Plugin URI: http://www.blogsynthesis.com/
+Plugin URI: http://www.blogsynthesis.com/plugins/header-and-footer-scripts
 Description: Allows you to insert code or text in the header or footer of your WordPress blog
-Version: 1.3
+Version: 1.3.0
 Author: Anand Kumar
 Author URI: http://www.blogsynthesis.com/
 License: GPLv2 or later
@@ -23,8 +23,9 @@ License: GPLv2 or later
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
 
+	Credits: WPBeginner (http://bit.ly/wpb-ihf) and Farinspace (http://bit.ly/1m9NzM9)
+*/
 
 define('SHFS_PLUGIN_DIR',str_replace('\\','/',dirname(__FILE__)));
 
