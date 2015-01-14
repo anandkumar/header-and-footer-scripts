@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Header and Footer Scripts
-Plugin URI: http://www.blogsynthesis.com/plugins/header-and-footer-scripts
+Plugin URI: http://www.blogsynthesis.com/plugins/header-and-footer-scripts/
 Description: Allows you to insert code or text in the header or footer of your WordPress blog
-Version: 1.3.0
+Version: 1.3.1
 Author: Anand Kumar
-Author URI: http://www.blogsynthesis.com/
+Author URI: http://www.blogsynthesis.com
 License: GPLv2 or later
 */
 
@@ -158,13 +158,13 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 						</div>
 						<div class="shfs-support" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
 							<h2>Need Support?</h2>
-							<p>If you are having problems with this plugin, please talk about them in the</p>
-							<p><a href="http://www.wpavenue.com/forums/" target="_blank">Support Forums</a></p>
+							<p>For any help visit our Support Forums</p>
+							<p><strong><a href="http://my.blogsynthesis.com/forums/" target="_blank">Support Forums</a></strong></p>
 						</div>
 						<div class="shfs-donate" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
 							<h3>Contribute or Donate!</h3>
 							<p>Want to help make this plugin even better? All donations are used to improve this plugin, so donate $10, $20 or $50 now!</p>
-							<p><a href="http://www.blogsynthesis.com/go/donate/" target="_blank"><img src="http://static.blogsynthesis.com/public/paypal-donate.gif" alt="Subscribe to our Blog" style="margin: 0 5px 0 0; vertical-align: top; line-height: 18px;"/> Donate!</a></p>
+							<p><a href="http://www.blogsynthesis.com/go/donate" target="_blank"><img src="<?php  echo plugin_dir_url( __FILE__ ); ?>images/paypal-donate.gif" alt="Subscribe to our Blog" style="margin: 0 5px 0 0; vertical-align: top; line-height: 18px;"/> Donate!</a></p>
 						</div>
 						<div class="shfs-wpb-recent" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
 						<h2>Latest From BlogSynthesis</h2>
@@ -322,7 +322,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			
 			{ ?>
 				<div class="rss-widget">
-                	<a href="http://www.blogsynthesis.com/#utm_source=wpadmin&utm_medium=dashboardwidget&utm_term=newsitemlogo&utm_campaign=shfs" title="BlogSynthesis - For Bloggers" target="_blank"><img src="http://static.blogsynthesis.com/public/blogsynthesis-100px.png"  class="alignright" alt="BlogSynthesis"/></a>			
+                	<a href="http://www.blogsynthesis.com/#utm_source=wpadmin&utm_medium=dashboardwidget&utm_term=newsitemlogo&utm_campaign=shfs" title="BlogSynthesis - For Bloggers" target="_blank"><img src="<?php  echo plugin_dir_url( __FILE__ ); ?>images/blogsynthesis-100px.png"  class="alignright" alt="BlogSynthesis"/></a>			
 					<ul>
 						<?php if ( $maxitems == 0 ) : ?>
 							<li><?php _e( 'No items', 'shfs-text-domain' ); ?></li>
@@ -346,7 +346,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 						<a class="addthis_button_rss_follow" addthis:userid="http://feeds2.feedburner.com/blogsynthesis"></a>
 						</span>
 						&nbsp; &nbsp; &nbsp;
-						<a href="http://www.blogsynthesis.com/newsletter/"><img src="http://static.blogsynthesis.com/public/email-16px.png" alt="Subscribe via Email"/> Subscribe by email</a>
+						<a href="http://www.blogsynthesis.com/newsletter/"><img src="<?php  echo plugin_dir_url( __FILE__ ); ?>images/email-16px.png" alt="Subscribe via Email"/> Subscribe by email</a>
                 		&nbsp; &nbsp; &nbsp;
 						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525ab1d176544441"></script>
 					</div>
