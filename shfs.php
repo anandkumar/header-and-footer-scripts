@@ -3,7 +3,7 @@
 Plugin Name: Header and Footer Scripts
 Plugin URI: http://www.blogsynthesis.com/plugins/header-and-footer-scripts/
 Description: Allows you to insert code or text in the header or footer of your WordPress blog
-Version: 1.3.1
+Version: 1.3.2
 Author: Anand Kumar
 Author URI: http://www.blogsynthesis.com
 License: GPLv2 or later
