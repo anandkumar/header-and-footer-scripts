@@ -3,28 +3,30 @@
 Plugin Name: Header and Footer Scripts
 Plugin URI: http://www.blogsynthesis.com/plugins/header-and-footer-scripts/
 Description: Allows you to insert code or text in the header or footer of your WordPress blog
-Version: 1.3.2
+Version: 1.3.3
 Author: Anand Kumar
 Author URI: http://www.blogsynthesis.com
 License: GPLv2 or later
+
+jQuery Smooth Scroll
+Copyright (C) 2013-16, Anand Kumar <anand@anandkumar.net>
 */
 
-/*  Copyright 2014  Anand Kumar  (email : anand@anandkumar.net)
+/*
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as 
+published by the Free Software Foundation.
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Foundation.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-	Credits: WPBeginner (http://bit.ly/wpb-ihf) and Farinspace (http://bit.ly/1m9NzM9)
+Credits: WPBeginner (http://bit.ly/wpb-ihf) and Farinspace (http://bit.ly/1m9NzM9)
 */
 
 define('SHFS_PLUGIN_DIR',str_replace('\\','/',dirname(__FILE__)));
@@ -33,7 +35,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 	
 	class HeaderAndFooterScripts {
 
-		function HeaderAndFooterScripts() {
+		function __construct() {
 		
 			add_action( 'init', array( &$this, 'init' ) );
 			add_action( 'admin_init', array( &$this, 'admin_init' ) );
@@ -158,8 +160,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 						</div>
 						<div class="shfs-support" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
 							<h2>Need Support?</h2>
-							<p>For any help visit our Support Forums</p>
-							<p><strong><a href="http://my.blogsynthesis.com/forums/" target="_blank">Support Forums</a></strong></p>
+							<p>For any help visit our <br /><strong><a href="http://www.blogsynthesis.com/plugins/header-and-footer-scripts/" target="_blank">Plugin Page</a></strong> or<br /><strong><a href="http://www.blogsynthesis.com/support/" target="_blank">Support Page</a></strong></p>
 						</div>
 						<div class="shfs-donate" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
 							<h3>Contribute or Donate!</h3>

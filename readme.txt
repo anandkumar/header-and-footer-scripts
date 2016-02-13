@@ -1,12 +1,13 @@
 === Header and Footer Scripts ===
 
-Contributors: BlogSynthesis, Anand_Kumar
+Contributors: BlogSynthesis, anand_kumar, corelibs
+Donate link: http://www.blogsynthesis.com/donate/
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 3.4.1
-Tested up to: 4.1
-Stable tag: 1.3.2
+Tested up to: 4.4.2
+Stable tag: 1.3.3
 License: GPLv2 or later
-Donate link: http://www.blogsynthesis.com/#donate
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Header and Footer Scripts plugin enables you to add scripts to WordPress header and footer.
 
@@ -32,9 +33,9 @@ PS: For any troubleshooting ask your question in the [BlogSynthesis Forums][7]. 
   [2]: http://bit.ly/ClickyWebAnalytics
   [3]: http://www.blogsynthesis.com/plugins/header-and-footer-scripts/#FAQs
   [4]: http://www.blogsynthesis.com/plugins/header-and-footer-scripts/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
-  [5]: http://my.blogsynthesis.com/forums/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
+  [5]: http://www.blogsynthesis.com/support/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
   [6]: http://www.blogsynthesis.com/donate/
-  [7]: http://my.blogsynthesis.com/forums/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
+  [7]: http://www.blogsynthesis.com/support/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
 
 == Installation ==
 
@@ -48,7 +49,7 @@ Upload the plugin to `/wp-content/plugins` and activate. OR Search "Header and F
 
 **Q. I need plugin support. Where should I ask questions?** 
 
-A. You may ask support related questions at [BlogSynthesis Forums](http://my.blogsynthesis.com/forums/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs). Meanwhile, you should take a look on [this FAQ](http://www.blogsynthesis.com/plugins/header-and-footer-scripts/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs) This page will have most latest FAQs (that depends upon what user asks.) Read that article before asking any questions. It may solve your questions and save time.
+A. You may ask support related questions at [BlogSynthesis Forums](http://www.blogsynthesis.com/support/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs). Meanwhile, you should take a look on [this FAQ](http://www.blogsynthesis.com/plugins/header-and-footer-scripts/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs) This page will have most latest FAQs (that depends upon what user asks.) Read that article before asking any questions. It may solve your questions and save time.
 
 **How do I disable the site-wide header and footer injection or the post specific header injection?**
 
@@ -67,6 +68,9 @@ A. If you are looking for less functionality then check [Insert Header and Foote
 A. No, There is no paid version of this plugin is available.
 
 == Changelog ==
+
+= 1.3.3 =
+* Started using PHP5 style construct
 
 = 1.3.2 =
 * Fixed https issue
