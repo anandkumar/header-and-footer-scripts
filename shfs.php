@@ -236,7 +236,8 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 		// authentication checks
 
 		// make sure data came from our meta box
-		if (!wp_verify_nonce($_POST['shfs_post_meta_noncename'],__FILE__)) return $post_id;
+		if ( ! isset( $_POST['shfs_post_meta_noncename'] )
+			|| !wp_verify_nonce($_POST['shfs_post_meta_noncename'],__FILE__)) return $post_id;
 
 		// check user permissions
 		if ($_POST['post_type'] == 'page') 
