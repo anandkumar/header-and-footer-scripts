@@ -15,19 +15,20 @@ Header and Footer Scripts plugin enables you to add scripts to WordPress header 
 
 Many WordPress Themes do not have any options to insert header and footer scripts in your site `<head>` or `<footer>`. It helps you to keep yourself from theme lock. But, sometimes it also causes some pain for many. like where should I insert Google Analytics code (or any other web-analytics codes). This plugin is one stop and lightweight solution for that. With this "Header and Footer Script" plugin will be able to inject HTML tags, JS and CSS codes to `<head>` and `<footer>` easily.
 
-=Benefits of the plugin:=
+= Benefits of the plugin: =
 * You will be able to [insert Google Analytics][1] or other Web-analytics code, meta-informations, CSS and JS codes to `<head>`
 * You will be able to insert html and/or JavaScript codes to footer of your site. Good place for [Clicky Web Analytics][2], Twitter, Facebook or any other social media script.
 * Easily insert codes to single post and page headers, in addition to default codes.
 
-Please note, Not all themes need this plugin and Not all themes supports this plugin. Check `wp_head` and `wp_footer` if this plugin do not works for you. **[more information here][3]**
+Please note, If the plugin is not working check for `wp_head` and `wp_footer` hooks. [more information][3] or [ask for support][7].
 
 = Important Links =
 * **[Latest FAQs and Help Article][4]**
+* **[GitHub Repo][8]**
 * **[Support][5]**
 * **[Donate][6]**
 
-PS: For any troubleshooting ask your question in the [BlogSynthesis Forums][7]. I will not be able to provide regular support here.
+PS: For any troubleshooting ask your question in the BlogSynthesis Forums. I can't check WordPress forums regularly.
 
   [1]: http://www.blogsynthesis.com/google-analytics-to-wordpress/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
   [2]: http://bit.ly/ClickyWebAnalytics
@@ -36,6 +37,7 @@ PS: For any troubleshooting ask your question in the [BlogSynthesis Forums][7]. 
   [5]: http://www.blogsynthesis.com/support/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
   [6]: http://www.blogsynthesis.com/donate/
   [7]: http://www.blogsynthesis.com/support/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs
+  [8]: https://github.com/anandkumar/header-and-footer-scripts
 
 == Installation ==
 
@@ -68,6 +70,9 @@ A. If you are looking for less functionality then check [Insert Header and Foote
 A. No, There is no paid version of this plugin is available.
 
 == Changelog ==
+
+= 1.3.4 =
+* Fixed variable undefined notice
 
 = 1.3.3 =
 * Started using PHP5 style construct
