@@ -115,20 +115,20 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			<div id="shfs-wrap">
 				<div class="wrap">
 				<?php screen_icon(); ?>
-					<h2>Header and Footer Scripts - Options</h2>
-					<hr />
-					<div class="shfs-wrap">
+					<h2>Header and Footer Scripts - Options <a class="add-new-h2" target="_blank" href="#">Read Tutorial</a></h2>
 					
+					<hr />
+					<div id="post-body" class="metabox-holder columns-2">
 						<form name="dofollow" action="options.php" method="post">
 						
 							<?php settings_fields( 'insert-headers-and-footers' ); ?>
 							
 							<h3 class="shfs-labels" for="shfs_insert_header">Scripts in header:</h3>
-							<textarea rows="5" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea><br />
+							<textarea style="width:98%; max-width: 700px;" rows="5" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea><br />
 						These scripts will be printed to the <code>&lt;head&gt;</code> section. 
 						
 							<h3 class="shfs-labels footerlabel" for="shfs_insert_footer">Scripts in footer:</h3>
-							<textarea rows="5" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea><br />
+							<textarea style="width:98%; max-width: 700px;" rows="5" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea><br />
 						These scripts will be printed to the <code>&lt;footer&gt;</code> section.
 
 						<p class="submit">
