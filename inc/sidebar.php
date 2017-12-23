@@ -6,22 +6,25 @@
  *
  */?>
 <div id="postbox-container-1" class="postbox-container">
-  <div class="shfs-improve-site" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
-    <h2>Improve Your Site!</h2>
-    <p>Want to take your site to the next level? Look behind the scenes of BlogSynthesis to see what you can do!</p>
-    <p><a href="http://www.blogsynthesis.com/go/shfs-plugin/" class="button" target="_blank">BlogSynthesis's Blueprint &raquo;</a></p>
+
+  <div class="postbox">
+    <h3 class="hndle">Need Help?</h3>
+    <div class="inside">
+      <p>For any help visit our <br /><strong><a href="http://www.blogsynthesis.com/plugins/header-and-footer-scripts/" target="_blank" class="button">Plugin Help</a></strong> or<br /><strong><a href="http://help.digitalliberation.org/contact/" target="_blank">Support Page</a></strong></p>
+    </div>
   </div>
-  <div class="shfs-support" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
-    <h2>Need Support?</h2>
-    <p>For any help visit our <br /><strong><a href="http://www.blogsynthesis.com/plugins/header-and-footer-scripts/" target="_blank" class="button">Plugin Help</a></strong> or<br /><strong><a href="http://help.digitalliberation.org/contact/" target="_blank">Support Page</a></strong></p>
-  </div>
-  <div class="shfs-donate" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
-    <h3>Contribute or Donate!</h3>
+
+  <div class="postbox">
+    <h3 class="hndle">Contribute or Donate!</h3>
+    <div class="inside">
     <p>Help us to make this plugin even better. Contribution doesn't always mean donation. Please follow the link to know more and contribute.</p>
-    <p><a href="http://digitalliberation.org/contribute?utm_source=wpdash" target="_blank">Contribute</a></p>
+      <p><a href="http://digitalliberation.org/contribute?utm_source=wpdash" target="_blank" class="button">Contribute</a></p>
+    </div>
   </div>
-  <div class="shfs-wpb-recent" style="padding: 1rem; background: rgba(0, 0, 0, .02);">
-  <h2>Latest From BlogSynthesis</h2>
+
+  <div class="postbox">
+    <h3 class="hndle">Follow Us!</h3>
+    <div class="inside">
     <?php
     $rss_items = $this->fetch_rss_items( 3, 'http://feeds.feedburner.com/blogsynthesis' );
     $content = '<ul>';
@@ -41,5 +44,6 @@
       $content .= '</ul>';
       echo $content;
       ?>
+    </div>
   </div>
 </div>
