@@ -9,14 +9,14 @@
         <div class="inside">
           <form name="dofollow" action="options.php" method="post">
 
-            <?php settings_fields( 'insert-headers-and-footers' ); ?>
+            <?php settings_fields( 'header-and-footer-scripts' ); ?>
 
             <h3 class="shfs-labels" for="shfs_insert_header"><?php _e( 'Scripts in header:', 'header-and-footer-scripts'); ?></h3>
-            <textarea style="width:98%;" rows="15" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea>
+            <textarea style="width:98%;" rows="10" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea>
             <p><?php _e( 'Above script will be inserted into the <code>&lt;head&gt;</code> section.', 'header-and-footer-scripts'); ?></p><hr />
 
             <h3 class="shfs-labels footerlabel" for="shfs_insert_footer"><?php _e( 'Scripts in footer:', 'header-and-footer-scripts'); ?></h3>
-            <textarea style="width:98%;" rows="15" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea>
+            <textarea style="width:98%;" rows="10" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea>
             <p><?php _e( 'Above script will be inserted just before <code>&lt;/body&gt;</code> tag using <code>wp_footer</code> hook.', 'header-and-footer-scripts'); ?></p>
 
           <p class="submit">
