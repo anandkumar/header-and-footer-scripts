@@ -59,7 +59,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			// add meta box to singgular post types
 			foreach (array('post','page') as $type)
 			{
-				add_meta_box('shfs_all_post_meta', 'Insert Script to &lt;head&gt;', 'shfs_meta_setup', $type, 'normal', 'high');
+				add_meta_box('shfs_all_post_meta', esc_html__('Insert Script to &lt;head&gt;', 'header-and-footer-scripts'), 'shfs_meta_setup', $type, 'normal', 'high');
 			}
 
 			add_action('save_post','shfs_post_meta_save');
@@ -67,7 +67,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 		// adds menu item to wordpress admin dashboard
 		function admin_menu() {
-			$page = add_submenu_page( 'options-general.php', 'Header and Footer Scripts', 'Header and Footer Scripts', 'manage_options', __FILE__, array( &$this, 'shfs_options_panel' ) );
+			$page = add_submenu_page( 'options-general.php', __('Header and Footer Scripts', 'header-and-footer-scripts'), __('Header and Footer Scripts', 'header-and-footer-scripts'), 'manage_options', __FILE__, array( &$this, 'shfs_options_panel' ) );
 			}
 
 		function wp_head() {
