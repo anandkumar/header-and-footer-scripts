@@ -1,15 +1,19 @@
 <?php
-/*
-Plugin Name: Header and Footer Scripts
-Plugin URI: http://www.blogsynthesis.com/plugins/header-and-footer-scripts/
-Description: Allows you to insert code or text in the header or footer of your WordPress blog
-Version: 1.3.5.1
-Author: Anand Kumar
-Author URI: http://www.blogsynthesis.com
-License: GPLv2 or later
+/**
+ * Plugin Name: Header and Footer Scripts
+ * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts
+ * Description: Allows you to insert code or text in the header or footer of your WordPress blog
+ * Version: 2.0.0
+ * Author: Anand Kumar
+ * Author URI: http://www.anandkumar.net
+ * Text Domain: header-and-footer-scripts
+ * Domain Path: /lang
+ * License: GPLv2 or later
+ */
 
+/*
 Header and Footer Scripts
-Copyright (C) 2013-16, Anand Kumar <anand@anandkumar.net>
+Copyright (C) 2013 - 2018, Anand Kumar <anand@anandkumar.net>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as

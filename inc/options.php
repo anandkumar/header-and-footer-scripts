@@ -1,5 +1,5 @@
 <div class="wrap">
-  <h2>Header and Footer Scripts - Options <a class="add-new-h2" target="_blank" href="#">Read Tutorial</a></h2>
+  <h2><?php _e( 'Header and Footer Scripts - Options', 'header-and-footer-scripts'); ?> <a class="add-new-h2" target="_blank" href="#"><?php _e( 'Read Tutorial', 'header-and-footer-scripts'); ?></a></h2>
 
   <hr />
   <div id="poststuff">
@@ -11,16 +11,16 @@
 
             <?php settings_fields( 'insert-headers-and-footers' ); ?>
 
-            <h3 class="shfs-labels" for="shfs_insert_header">Scripts in header:</h3>
-            <textarea style="width:98%;" rows="15" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea><br />
-          Above script will be inserted into the <code>&lt;head&gt;</code> section.
+            <h3 class="shfs-labels" for="shfs_insert_header"><?php _e( 'Scripts in header:', 'header-and-footer-scripts'); ?></h3>
+            <textarea style="width:98%;" rows="15" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea>
+            <p><?php _e( 'Above script will be inserted into the <code>&lt;head&gt;</code> section.', 'header-and-footer-scripts'); ?></p><hr />
 
-            <h3 class="shfs-labels footerlabel" for="shfs_insert_footer">Scripts in footer:</h3>
-            <textarea style="width:98%;" rows="15" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea><br />
-          Above script will be inserted just before <code>&lt;/body&gt;</code> tag using <code>wp_footer</code> hook.
+            <h3 class="shfs-labels footerlabel" for="shfs_insert_footer"><?php _e( 'Scripts in footer:', 'header-and-footer-scripts'); ?></h3>
+            <textarea style="width:98%;" rows="15" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea>
+            <p><?php _e( 'Above script will be inserted just before <code>&lt;/body&gt;</code> tag using <code>wp_footer</code> hook.', 'header-and-footer-scripts'); ?></p>
 
           <p class="submit">
-            <input class="button button-primary" type="submit" name="Submit" value="Save settings" />
+            <input class="button button-primary" type="submit" name="Submit" value="<?php _e( 'Save settings', 'header-and-footer-scripts'); ?>" />
           </p>
 
           </form>

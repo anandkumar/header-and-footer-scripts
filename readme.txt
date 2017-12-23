@@ -1,11 +1,12 @@
 === Header and Footer Scripts ===
 
-Contributors: BlogSynthesis, anand_kumar, webelements
+Contributors: digitalliberation, anand_kumar
 Donate link: http://www.blogsynthesis.com/donate/
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 3.6
-Tested up to: 4.4.2
-Stable tag: 1.3.5.1
+Tested up to: 4.9.1
+Stable tag: 2.0.0
+Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,13 +50,13 @@ Upload the plugin to `/wp-content/plugins` and activate. OR Search "Header and F
 
 == Frequently Asked Questions ==
 
-**Q. I need plugin support. Where should I ask questions?** 
+**Q. I need plugin support. Where should I ask questions?**
 
-A. You may ask support related questions at [BlogSynthesis Forums](http://www.blogsynthesis.com/support/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs). Meanwhile, you should take a look on [this FAQ](http://www.blogsynthesis.com/plugins/header-and-footer-scripts/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs) This page will have most latest FAQs (that depends upon what user asks.) Read that article before asking any questions. It may solve your questions and save time.
+A. You may ask support related questions at (http://digitalliberation.org/wordpress/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs). Meanwhile, you should take a look on [this FAQ](http://www.blogsynthesis.com/plugins/header-and-footer-scripts/#utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wpshfs) This page will have most latest FAQs (that depends upon what user asks.) Read that article before asking any questions. It may solve your questions and save time.
 
 **How do I disable the site-wide header and footer injection or the post specific header injection?**
 
-A. To keep this plugin simple we have not added any such options. You may try another plugin for more or less functionality. 
+A. To keep this plugin simple we have not added any such options. You may try another plugin for more or less functionality.
 
 **Q: I need more functionality. What should I do?**
 
@@ -70,6 +71,10 @@ A. If you are looking for less functionality then check [Insert Header and Foote
 A. No, There is no paid version of this plugin is available.
 
 == Changelog ==
+
+= 2.0.0 =
+* Visual Improvements
+* better directory structure.
 
 = 1.3.4 =
 * Fixed variable undefined notice
