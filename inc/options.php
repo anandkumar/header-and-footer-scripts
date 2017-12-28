@@ -1,5 +1,15 @@
+<?php
+/**
+ * Plugin Options page
+ *
+ * @package    Header and Footer Scripts
+ * @author     Anand Kumar <anand@anandkumar.net>
+ * @copyright  Copyright (c) 2013 - 20168, Anand Kumar
+ * @link       http://digitalliberation.org/plugins/header-and-footer-scripts
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */?>
 <div class="wrap">
-  <h2><?php _e( 'Header and Footer Scripts - Options', 'header-and-footer-scripts'); ?> <a class="add-new-h2" target="_blank" href="#"><?php _e( 'Read Tutorial', 'header-and-footer-scripts'); ?></a></h2>
+  <h2><?php _e( 'Header and Footer Scripts - Options', 'header-and-footer-scripts'); ?> <a class="add-new-h2" target="_blank" href="<?php echo esc_url( "http://digitalliberation.org/docs/header-and-footer-scripts/?utm_source=wpdash_hfs" ); ?>"><?php _e( 'Read Tutorial', 'header-and-footer-scripts'); ?></a></h2>
 
   <hr />
   <div id="poststuff">

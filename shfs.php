@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Header and Footer Scripts
- * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts
- * Description: Allows you to insert code or text in the header or footer of your WordPress blog
+ * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts/?utm_source=wphfs_plugin_uri
+ * Description: Allows you to insert code or text in the header or footer of your WordPress site
  * Version: 2.0.0
- * Author: Anand Kumar
- * Author URI: http://www.anandkumar.net
+ * Author: Digital Liberation
+ * Author URI: http://digitalliberation.org/?utm_source=wphfs_author_uri
  * Text Domain: header-and-footer-scripts
  * Domain Path: /lang
  * License: GPLv2 or later
@@ -45,8 +45,8 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 		}
 
-
 		function init() {
+
 			load_plugin_textdomain( 'header-and-footer-scripts', false, dirname( plugin_basename ( __FILE__ ) ).'/lang' );
 		}
 
@@ -57,8 +57,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer', 'trim' );
 
 			// add meta box to singgular post types
-			foreach (array('post','page') as $type)
-			{
+			foreach (array('post','page') as $type) {
 				add_meta_box('shfs_all_post_meta', esc_html__('Insert Script to &lt;head&gt;', 'header-and-footer-scripts'), 'shfs_meta_setup', $type, 'normal', 'high');
 			}
 
@@ -72,14 +71,14 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 		function wp_head() {
 			$meta = get_option( 'shfs_insert_header', '' );
-				if ( $meta != '' ) {
-					echo $meta, "\n";
-				}
+			if ( $meta != '' ) {
+				echo $meta, "\n";
+			}
 
 			$shfs_post_meta = get_post_meta( get_the_ID(), '_inpost_head_script' , TRUE );
-				if ( $shfs_post_meta != '' ) {
-					echo $shfs_post_meta['synth_header_script'], "\n";
-				}
+			if ( $shfs_post_meta != '' ) {
+				echo $shfs_post_meta['synth_header_script'], "\n";
+			}
 
 		}
 
@@ -89,33 +88,10 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 				$text = convert_smilies( $text );
 				$text = do_shortcode( $text );
 
-			if ( $text != '' ) {
-				echo $text, "\n";
+				if ( $text != '' ) {
+					echo $text, "\n";
+				}
 			}
-			}
-		}
-
-
-		function fetch_rss_items( $num, $feed ) {
-			include_once( ABSPATH . WPINC . '/feed.php' );
-			$rss = fetch_feed( $feed );
-
-			// Bail if feed doesn't work
-			if ( !$rss || is_wp_error( $rss ) )
-			return false;
-
-			$rss_items = $rss->get_items( 0, $rss->get_item_quantity( $num ) );
-
-			// If the feed was erroneous
-			if ( !$rss_items ) {
-				$md5 = md5( $feed );
-				delete_transient( 'feed_' . $md5 );
-				delete_transient( 'feed_mod_' . $md5 );
-				$rss = fetch_feed( $feed );
-				$rss_items = $rss->get_items( 0, $rss->get_item_quantity( $num ) );
-			}
-
-			return $rss_items;
 		}
 
 		function shfs_options_panel() {
@@ -124,8 +100,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 		}
 	}
 
-	function shfs_meta_setup()
-	{
+	function shfs_meta_setup() {
 		global $post;
 
 		// using an underscore, prevents the meta variable
@@ -139,8 +114,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 		echo '<input type="hidden" name="shfs_post_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
 	}
 
-	function shfs_post_meta_save($post_id)
-	{
+	function shfs_post_meta_save($post_id) {
 		// authentication checks
 
 		// make sure data came from our meta box
@@ -148,13 +122,14 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			|| !wp_verify_nonce($_POST['shfs_post_meta_noncename'],__FILE__)) return $post_id;
 
 		// check user permissions
-		if ($_POST['post_type'] == 'page')
-		{
+		if ($_POST['post_type'] == 'page') {
+
 			if (!current_user_can('edit_page', $post_id)) return $post_id;
-		}
-		else
-		{
+
+		} else {
+
 			if (!current_user_can('edit_post', $post_id)) return $post_id;
+
 		}
 
 		$current_data = get_post_meta($post_id, '_inpost_head_script', TRUE);
@@ -163,50 +138,47 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 		shfs_post_meta_clean($new_data);
 
-		if ($current_data)
-		{
+		if ($current_data) {
+
 			if (is_null($new_data)) delete_post_meta($post_id,'_inpost_head_script');
+
 			else update_post_meta($post_id,'_inpost_head_script',$new_data);
-		}
-		elseif (!is_null($new_data))
-		{
+
+		} elseif (!is_null($new_data)) {
+
 			add_post_meta($post_id,'_inpost_head_script',$new_data,TRUE);
+
 		}
 
 		return $post_id;
 	}
 
-	function shfs_post_meta_clean(&$arr)
-	{
-		if (is_array($arr))
-		{
-			foreach ($arr as $i => $v)
-			{
-				if (is_array($arr[$i]))
-				{
+	function shfs_post_meta_clean(&$arr) {
+
+		if (is_array($arr)) {
+
+			foreach ($arr as $i => $v) {
+
+				if (is_array($arr[$i])) {
 					shfs_post_meta_clean($arr[$i]);
 
-					if (!count($arr[$i]))
-					{
+					if (!count($arr[$i])) {
 						unset($arr[$i]);
 					}
-				}
-				else
-				{
-					if (trim($arr[$i]) == '')
-					{
+
+				} else {
+
+					if (trim($arr[$i]) == '') {
 						unset($arr[$i]);
 					}
 				}
 			}
 
-			if (!count($arr))
-			{
+			if (!count($arr)) {
 				$arr = NULL;
 			}
 		}
 	}
 
-$shfs_header_and_footer_scripts = new HeaderAndFooterScripts();
-
+	$shfs_header_and_footer_scripts = new HeaderAndFooterScripts();
 }
