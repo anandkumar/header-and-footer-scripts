@@ -76,8 +76,14 @@ A. Nope, There is none. If you need more feature send us feedback or feature req
 
 == Changelog ==
 
+= 2.0.1 =
+* Uniform Coding style.
+* Improved Translatable strings.
+* Fixed Links
+* Code Cleanup
+
 = 2.0.0 =
-* Visual Improvements
+* Visual Improvements.
 * better directory structure.
 
 = 1.3.4 =
