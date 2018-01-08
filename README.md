@@ -27,7 +27,7 @@ You are more than welcome to make this better. If you are coder then please send
 
 ## Plugin Features
 * Insert CSS and JavaScript codes to `<head>` or before `</body>`.
-* Insert codes to single post and page `<head>`.
+* Insert codes into `<head>` of single post, page or any other custom post types.
 
 You will have to warp your code with proper tags. And this plugin will not execute any PHP code. So only enter valid HTML code.
 

@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Header and Footer Scripts plugin allows you to add scripts to WordPress site's <head> and just before closing <body> tag.
 
 == Description ==
-If you are running a WordPress site then sooner or later you need to insert some kind of code to your website. It is most likley a web analytics code like Google Analytics or may be social media script or some CSS stylesheet or may be Custom fonts. This plugin will do all the magic. Even if you want to insert those codes in a single post or page.
+If you are running a WordPress site then sooner or later you need to insert some kind of code to your website. It is most likley a web analytics code like Google Analytics or may be social media script or some CSS stylesheet or may be Custom fonts. This plugin will do all the magic. Even if you want to insert those codes in a custom post type.
 
 All you have to do is adding appropriate html code.
 
@@ -31,7 +31,10 @@ Or for CSS:
 
 = Why use this plugin: =
 * To insert CSS and JavaScript codes to `<head>` or before `</body>`.
-* To insert code to `<head>` of any single page or post. 
+* To insert code to `<head>` of any single page or post.
+* To insert code to Custom Post Type [New Feature]. 
+
+The plugin should be compatible with WooCommerce.
 
 = What it does not offer =
 * You can't insert/execute PHP codes.
@@ -75,6 +78,10 @@ A. I couldn't handle wp.org forums on regular basis. You are suggested to visit 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.1.0 =
+* Support to Custom Post Type (CPT).
+* Improved ReadMe
 
 = 2.0.1 =
 * Uniform Coding style.
