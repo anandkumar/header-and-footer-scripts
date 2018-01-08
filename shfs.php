@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts/?utm_source=wphfs_plugin_uri
  * Description: Allows you to insert code or text in the header or footer of your WordPress site
- * Version: 2.0.1
+ * Version: 2.1.0
  * Author: Digital Liberation
  * Author URI: http://digitalliberation.org/?utm_source=wphfs_author_uri
  * Text Domain: header-and-footer-scripts
@@ -56,8 +56,8 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_header', 'trim' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer', 'trim' );
 
-			// add meta box to singgular post types
-			foreach (array('post','page') as $type) {
+			// add meta box to all post types
+			foreach ( get_post_types( '', 'names' ) as $type ) {
 				add_meta_box('shfs_all_post_meta', esc_html__('Insert Script to &lt;head&gt;', 'header-and-footer-scripts'), 'shfs_meta_setup', $type, 'normal', 'high');
 			}
 
@@ -122,13 +122,15 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			|| !wp_verify_nonce($_POST['shfs_post_meta_noncename'],__FILE__)) return $post_id;
 
 		// check user permissions
-		if ($_POST['post_type'] == 'page') {
+		if ( $_POST['post_type'] == 'page' ) {
 
-			if (!current_user_can('edit_page', $post_id)) return $post_id;
+			if (!current_user_can('edit_page', $post_id)) 
+				return $post_id;
 
 		} else {
 
-			if (!current_user_can('edit_post', $post_id)) return $post_id;
+			if (!current_user_can('edit_post', $post_id)) 
+				return $post_id;
 
 		}
 
