@@ -4,9 +4,9 @@ Contributors: digitalliberation, anand_kumar
 Donate link: http://digitalliberation.org/contribute/?utm_source=wphfs_donate_link
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 4.0
-Tested up to: 4.9.1
+Tested up to: 5.0
 Stable tag: 2.1.0
-Requires PHP: 5.3
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,11 +50,11 @@ For furhter information you are welcomed to follow these links:
 * **[Contribute][4]**
 * **[Digital Liberation - Blog][5]**
 
-  [1]: http://digitalliberation.org/docs/header-and-footer-scripts/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
-  [2]: http://digitalliberation.org/support/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
+  [1]: https://www.digitalliberation.org/docs/header-and-footer-scripts/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
+  [2]: https://forum.digitalliberation.org/category/10/header-and-footer-scripts/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
   [3]: https://github.com/anandkumar/header-and-footer-scripts
-  [4]: http://digitalliberation.org/contribute/?utm_source=wporg&utm_medium=donation_link&utm_campaign=wp_hfs
-  [5]: http://digitalliberation.org/blog/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
+  [4]: https://www.digitalliberation.org/contribute/?utm_source=wporg&utm_medium=donation_link&utm_campaign=wp_hfs
+  [5]: https://www.digitalliberation.org/blog/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
 
 == Installation ==
 There is nothing special about installation of this plugin. It is as simple as uploading the plugin files to your plugins directory.
