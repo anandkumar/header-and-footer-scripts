@@ -4,9 +4,9 @@ Contributors: digitalliberation, anand_kumar
 Donate link: https://www.digitalliberation.org/contribute/?utm_source=wphfs_donate_link
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 4.0
-Tested up to: 5.0
+Tested up to: 5.2.2
 Stable tag: 2.1.1
-Requires PHP: 5.6
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,6 +82,7 @@ A. Nope, There is none. If you need more feature send us feedback or feature req
 = 2.1.1 =
 * Fixed a bug causing singular post type scripts to appear in archives.
 * Compatibility checked upto WordPress 5.2.2
+* Now require PHP v7.0 at least.
 
 = 2.1.0 =
 * Support to Custom Post Type (CPT).
