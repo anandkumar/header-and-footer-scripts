@@ -43,4 +43,4 @@ However, paid users will get priority support.
 
 This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2013&thinsp;&ndash;&thinsp;2018 &copy; [Anand Kumar](http://anandkumar.net).
+2013&thinsp;&ndash;&thinsp;2019 &copy; [Anand Kumar](http://anandkumar.net).

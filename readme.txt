@@ -1,11 +1,11 @@
 === Header and Footer Scripts ===
 
 Contributors: digitalliberation, anand_kumar
-Donate link: http://digitalliberation.org/contribute/?utm_source=wphfs_donate_link
+Donate link: https://www.digitalliberation.org/contribute/?utm_source=wphfs_donate_link
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 4.0
 Tested up to: 5.0
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,14 +32,14 @@ Or for CSS:
 = Why use this plugin: =
 * To insert CSS and JavaScript codes to `<head>` or before `</body>`.
 * To insert code to `<head>` of any single page or post.
-* To insert code to Custom Post Type [New Feature]. 
+* To insert code to Custom Post Type [New Feature].
 
 The plugin should be compatible with WooCommerce.
 
 = What it does not offer =
 * You can't insert/execute PHP codes.
 
-Almost all WordPress theme do support this "Header and Footer Scripts" plugin. If the codes are not appearing in your site [ask for support] or look at your theme file if they have standard `wp_head` and `wp_footer` hooks. 
+Almost all WordPress theme do support this "Header and Footer Scripts" plugin. If the codes are not appearing in your site [ask for support] or look at your theme file if they have standard `wp_head` and `wp_footer` hooks.
 
 = Important Links =
 For furhter information you are welcomed to follow these links:
@@ -51,7 +51,7 @@ For furhter information you are welcomed to follow these links:
 * **[Digital Liberation - Blog][5]**
 
   [1]: https://www.digitalliberation.org/docs/header-and-footer-scripts/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
-  [2]: https://forum.digitalliberation.org/category/10/header-and-footer-scripts/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
+  [2]: https://forums.digitalliberation.org/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
   [3]: https://github.com/anandkumar/header-and-footer-scripts
   [4]: https://www.digitalliberation.org/contribute/?utm_source=wporg&utm_medium=donation_link&utm_campaign=wp_hfs
   [5]: https://www.digitalliberation.org/blog/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
@@ -78,6 +78,10 @@ A. I couldn't handle wp.org forums on regular basis. You are suggested to visit 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.1.1 =
+* Fixed a bug causing singular post type scripts to appear in archives.
+* Compatibility checked upto WordPress 5.2.2
 
 = 2.1.0 =
 * Support to Custom Post Type (CPT).

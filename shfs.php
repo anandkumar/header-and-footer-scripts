@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts/?utm_source=wphfs_plugin_uri
  * Description: Allows you to insert code or text in the header or footer of your WordPress site
- * Version: 2.1.0
+ * Version: 2.1.1
  * Author: Digital Liberation
  * Author URI: http://digitalliberation.org/?utm_source=wphfs_author_uri
  * Text Domain: header-and-footer-scripts
@@ -13,7 +13,7 @@
 
 /*
 Header and Footer Scripts
-Copyright (C) 2013 - 2018, Anand Kumar <anand@anandkumar.net>
+Copyright (C) 2013 - 2019, Anand Kumar <anand@anandkumar.net>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
@@ -76,7 +76,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 
 			$shfs_post_meta = get_post_meta( get_the_ID(), '_inpost_head_script' , TRUE );
-			if ( $shfs_post_meta != '' ) {
+			if ( is_singular() && $shfs_post_meta != '' ) {
 				echo $shfs_post_meta['synth_header_script'], "\n";
 			}
 
@@ -124,12 +124,12 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 		// check user permissions
 		if ( $_POST['post_type'] == 'page' ) {
 
-			if (!current_user_can('edit_page', $post_id)) 
+			if (!current_user_can('edit_page', $post_id))
 				return $post_id;
 
 		} else {
 
-			if (!current_user_can('edit_post', $post_id)) 
+			if (!current_user_can('edit_post', $post_id))
 				return $post_id;
 
 		}

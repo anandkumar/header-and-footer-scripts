@@ -4,7 +4,7 @@
  *
  * @package    Header and Footer Scripts
  * @author     Anand Kumar <anand@anandkumar.net>
- * @copyright  Copyright (c) 2013 - 20168, Anand Kumar
+ * @copyright  Copyright (c) 2013 - 2019, Anand Kumar
  * @link       http://digitalliberation.org/plugins/header-and-footer-scripts
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */?>
