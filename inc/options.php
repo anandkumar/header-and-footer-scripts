@@ -22,14 +22,14 @@
             <?php settings_fields( 'header-and-footer-scripts' ); ?>
 
             <h3 class="shfs-labels" for="shfs_insert_header"><?php _e( 'Scripts in header:', 'header-and-footer-scripts'); ?></h3>
-            <textarea style="width:98%;" rows="10" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea>
+            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea>
 
             <p><label for="shfs_insert_header_priority"><?php _e('Priority'); ?></label>
             <input type="number" value="<?php echo \esc_html( \get_option( 'shfs_insert_header_priority', 10 ) ); ?>" name="shfs_insert_header_priority" id="shfs_insert_header_priority" style="width:6em;" /> <?php \_e('Default'); ?>: 10</p>
             <p><?php _e( 'Above script will be inserted into the <code>&lt;head&gt;</code> section.', 'header-and-footer-scripts'); ?></p><hr />
 
             <h3 class="shfs-labels footerlabel" for="shfs_insert_footer"><?php _e( 'Scripts in footer:', 'header-and-footer-scripts'); ?></h3>
-            <textarea style="width:98%;" rows="10" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea>
+            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea>
 
             <p><label for="shfs_insert_footer_priority"><?php _e('Priority'); ?></label>
             <input type="number" value="<?php echo \esc_html( \get_option( 'shfs_insert_footer_priority', 10 ) ); ?>" name="shfs_insert_footer_priority" id="shfs_insert_footer_priority" style="width:6em;" /> <?php \_e('Default'); ?>: 10</p>
