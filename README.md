@@ -35,7 +35,7 @@ You will have to warp your code with proper tags. And this plugin will not execu
 Latest Documentation is available at [this link](http://digitalliberation.org/docs/header-and-footer-scripts)
 
 ## Support
-This free plugin is supported for free at [digitalliberation.org/support](http://digitalliberation.org/support)
+This free plugin is supported for free at [forum.digitalliberation.org](https://forum.digitalliberation.org/category/10/header-and-footer-scripts)
 
 However, paid users will get priority support.
 
@@ -43,4 +43,4 @@ However, paid users will get priority support.
 
 This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2013&thinsp;&ndash;&thinsp;2019 &copy; [Anand Kumar](http://anandkumar.net).
+2013&thinsp;&ndash;&thinsp;2019 &copy; [Anand Kumar](http://www.anandkumar.net).
