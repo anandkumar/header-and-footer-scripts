@@ -4,9 +4,9 @@ Contributors: digitalliberation, anand_kumar
 Donate link: https://www.digitalliberation.org/contribute/?utm_source=wphfs_donate_link
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 4.0
-Tested up to: 5.2.2
-Stable tag: 2.1.2
-Requires PHP: 7.0
+Tested up to: 5.2.4
+Stable tag: 2.2.0
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,13 +71,19 @@ Once the plugin is activated you will see "Header and Footer Scripts" menu item 
 
 **Q. How could I access support and troubleshoot problem?**
 
-A. I couldn't handle wp.org forums on regular basis. You are suggested to visit [Digital Liberation](https://digitalliberation.org/) for more updated plugin documentation and troubleshoot your problem.
+A. I couldn't handle wp.org forums on regular basis. You are suggested to visit [Digital Liberation](https://forum.digitalliberation.org/) for more updated plugin documentation and troubleshoot your problem.
 
 **Q: Is there any paid version of the plugin available?**
 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.2.0 =
+* New feature: Now set priority to sitewide script.
+* Fix: Monoscript font for text area.
+* Improved readme.txt.
+* Reverted to PHP v5.6 as many people can't move to latest one.
 
 = 2.1.1 =
 * Fixed a bug causing singular post type scripts to appear in archives.

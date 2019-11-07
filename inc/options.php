@@ -9,7 +9,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */?>
 <div class="wrap">
-  <h2><?php _e( 'Header and Footer Scripts - Options', 'header-and-footer-scripts'); ?> <a class="add-new-h2" target="_blank" href="<?php echo esc_url( "http://digitalliberation.org/docs/header-and-footer-scripts/?utm_source=wpdash_hfs" ); ?>"><?php _e( 'Read Tutorial', 'header-and-footer-scripts'); ?></a></h2>
+  <h2><?php _e( 'Header and Footer Scripts - Options', 'header-and-footer-scripts'); ?> <a class="add-new-h2" target="_blank" href="<?php echo esc_url( "https://digitalliberation.org/docs/header-and-footer-scripts/?utm_source=wpdash_hfs" ); ?>"><?php _e( 'Read Tutorial', 'header-and-footer-scripts'); ?></a></h2>
 
   <hr />
   <div id="poststuff">

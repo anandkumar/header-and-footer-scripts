@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts/?utm_source=wphfs_plugin_uri
  * Description: Allows you to insert code or text in the header or footer of your WordPress site
- * Version: 2.1.1
+ * Version: 2.2.0
  * Author: Digital Liberation
  * Author URI: http://digitalliberation.org/?utm_source=wphfs_author_uri
  * Text Domain: header-and-footer-scripts
