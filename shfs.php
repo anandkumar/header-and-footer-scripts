@@ -40,8 +40,8 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			add_action( 'init', array( &$this, 'init' ) );
 			add_action( 'admin_init', array( &$this, 'admin_init' ) );
 			add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
-			add_action( 'wp_head', array( &$this, 'wp_head' ) );
-			add_action( 'wp_footer', array( &$this, 'wp_footer' ) );
+			add_action( 'wp_head', array( &$this, 'wp_head' ), \get_option('shfs_insert_header_priority', 10) );
+			add_action( 'wp_footer', array( &$this, 'wp_footer' ), \get_option('shfs_insert_footer_priority', 10) );
 
 		}
 
@@ -55,6 +55,8 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			// register settings for sitewide script
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_header', 'trim' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer', 'trim' );
+			register_setting( 'header-and-footer-scripts', 'shfs_insert_header_priority', 'intval' );
+			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer_priority', 'intval' );
 
 			// add meta box to all post types
 			foreach ( get_post_types( '', 'names' ) as $type ) {
