@@ -29,7 +29,7 @@
             <input type="number" value="<?php echo \esc_html( \get_option( 'shfs_insert_header_priority', 10 ) ); ?>" name="shfs_insert_header_priority" id="shfs_insert_header_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p><hr />
 
             <h3 class="shfs-labels footerlabel" for="shfs_insert_footer"><?php esc_html_e( 'Scripts in footer:', 'header-and-footer-scripts'); ?></h3>
-            <p><?php esc_html_e( 'The floowing script, if any, will be inserted before &lt;/body&gt; tag using wp_footer hook.', 'header-and-footer-scripts'); ?></p>
+            <p><?php esc_html_e( 'The following script, if any, will be inserted before &lt;/body&gt; tag using wp_footer hook.', 'header-and-footer-scripts'); ?></p>
             <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea>
 
             <p><label for="shfs_insert_footer_priority"><?php _e('Priority'); ?></label>
