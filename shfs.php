@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts/?utm_source=wphfs_plugin_uri
- * Description: Allows you to insert code or text in the header or footer of your WordPress site
+ * Description: Essential WordPress plugin for almost every website to insert codes like Javascript and CSS. Inserting script to your wp_head and wp_footer made easy.
  * Version: 2.2.1
  * Author: Digital Liberation
  * Author URI: http://digitalliberation.org/?utm_source=wphfs_author_uri
