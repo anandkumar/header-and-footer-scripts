@@ -4,7 +4,7 @@ Contributors: digitalliberation, anand_kumar
 Donate link: https://www.digitalliberation.org/contribute/?utm_source=wphfs_donate_link
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 4.0
-Tested up to: 5.2.4
+Tested up to: 5.4
 Stable tag: 2.2.1
 Requires PHP: 5.6
 License: GPLv2 or later
