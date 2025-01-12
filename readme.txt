@@ -1,10 +1,10 @@
 === Header and Footer Scripts ===
 
-Contributors: digitalliberation, anand_kumar
-Donate link: https://www.digitalliberation.org/contribute/?utm_source=wphfs_donate_link
+Contributors: anand_kumar, digitalliberation
+Donate link: https://github.com/anandkumar/header-and-footer-scripts
 Tags: head, header, footer, scripts, post, admin
 Requires at least: 4.0
-Tested up to: 5.4
+Tested up to: 6.7.1
 Stable tag: 2.2.1
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -47,14 +47,10 @@ For furhter information you are welcomed to follow these links:
 * **[Read Documentation][1]**
 * **[Get Support][2]**
 * **[GitHub Repository][3]**
-* **[Contribute][4]**
-* **[Digital Liberation - Blog][5]**
 
-  [1]: https://www.digitalliberation.org/docs/header-and-footer-scripts/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
-  [2]: https://forums.digitalliberation.org/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
+  [1]: https://github.com/anandkumar/header-and-footer-scripts/wiki
+  [2]: https://wordpress.org/support/plugin/header-and-footer-scripts/
   [3]: https://github.com/anandkumar/header-and-footer-scripts
-  [4]: https://www.digitalliberation.org/contribute/?utm_source=wporg&utm_medium=donation_link&utm_campaign=wp_hfs
-  [5]: https://www.digitalliberation.org/blog/?utm_source=wporg&utm_medium=wppluginpage&utm_campaign=wp_hfs
 
 == Installation ==
 There is nothing special about installation of this plugin. It is as simple as uploading the plugin files to your plugins directory.
@@ -71,13 +67,16 @@ Once the plugin is activated you will see "Header and Footer Scripts" menu item 
 
 **Q. How could I access support and troubleshoot problem?**
 
-A. I couldn't handle wp.org forums on regular basis. You are suggested to visit [Digital Liberation](https://forum.digitalliberation.org/) for more updated plugin documentation and troubleshoot your problem.
+A. I couldn't handle wp.org forums on regular basis. You are suggested to visit [GitHub Wiki](https://github.com/anandkumar/header-and-footer-scripts/wiki) for more updated plugin documentation and troubleshoot your problem.
 
 **Q: Is there any paid version of the plugin available?**
 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.2.1 =
+* Updated readme.txt.
 
 = 2.2.0 =
 * New feature: Now set priority to sitewide script.

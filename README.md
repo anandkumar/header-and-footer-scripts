@@ -32,12 +32,10 @@ You are more than welcome to make this better. If you are coder then please send
 You will have to warp your code with proper tags. And this plugin will not execute any PHP code. So only enter valid HTML code.
 
 ## Documentation
-Latest Documentation is available at [this link](http://digitalliberation.org/docs/header-and-footer-scripts)
+Latest Documentation is available at [this wiki](https://github.com/anandkumar/header-and-footer-scripts/wiki)
 
 ## Support
-This free plugin is supported for free at [forum.digitalliberation.org](https://forum.digitalliberation.org/category/10/header-and-footer-scripts)
-
-However, paid users will get priority support.
+This free plugin is supported for free at [Github Discussions](https://github.com/anandkumar/header-and-footer-scripts/discussions)
 
 ## Copyright and License
 

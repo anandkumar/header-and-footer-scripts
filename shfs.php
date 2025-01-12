@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Header and Footer Scripts
- * Plugin URI: http://digitalliberation.org/plugins/header-and-footer-scripts/?utm_source=wphfs_plugin_uri
+ * Plugin URI: https://github.com/anandkumar/header-and-footer-scripts
  * Description: Essential WordPress plugin for almost every website to insert codes like Javascript and CSS. Inserting script to your wp_head and wp_footer made easy.
  * Version: 2.2.1
- * Author: Digital Liberation
- * Author URI: http://digitalliberation.org/?utm_source=wphfs_author_uri
+ * Author: Anand Kumar
+ * Author URI: http://www.anandkumar.net
  * Text Domain: header-and-footer-scripts
  * Domain Path: /lang
  * License: GPLv2 or later
@@ -13,7 +13,7 @@
 
 /*
 Header and Footer Scripts
-Copyright (C) 2013 - 2020, Anand Kumar <anand@anandkumar.net>
+Copyright (C) 2013 - 2025, Anand Kumar <anand@anandkumar.net>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as

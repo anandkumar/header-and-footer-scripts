@@ -4,8 +4,8 @@
  *
  * @package    Header and Footer Scripts
  * @author     Anand Kumar <anand@anandkumar.net>
- * @copyright  Copyright (c) 2013 - 2020, Anand Kumar
- * @link       http://digitalliberation.org/plugins/header-and-footer-scripts
+ * @copyright  Copyright (c) 2013 - 2025, Anand Kumar
+ * @link       https://github.com/anandkumar/header-and-footer-scripts
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */?>
 <div id="postbox-container-1" class="postbox-container">
@@ -14,7 +14,7 @@
     <h3 class="hndle"><?php esc_html_e( 'Need Help?', 'header-and-footer-scripts'); ?></h3>
     <div class="inside">
       <p><?php esc_html_e( 'Read plugin documentation for clarification or how to use it. OR just ask your query.', 'header-and-footer-scripts'); ?></p>
-      <p><strong><a href="<?php echo esc_url( "http://digitalliberation.org/plugins/header-and-footer-scripts/?utm_source=wpdash_hfs" ); ?>" class="button"><?php esc_html_e('Explore Docs and Support', 'header-and-footer-scripts'); ?></a></strong></p>
+      <p><strong><a href="<?php echo esc_url( "https://github.com/anandkumar/header-and-footer-scripts/wiki" ); ?>" class="button"><?php esc_html_e('Explore Docs and Support', 'header-and-footer-scripts'); ?></a></strong></p>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
     <h3 class="hndle"><?php esc_html_e( 'Contribute or Donate!', 'header-and-footer-scripts'); ?></h3>
     <div class="inside">
       <p><?php esc_html_e( 'Help us to make this plugin even better. Contributions not necessarily be monetary. Please follow the link to know more and contribute.', 'header-and-footer-scripts'); ?></p>
-      <p><a href="<?php echo esc_url( "http://digitalliberation.org/contribute/?utm_source=wpdash_hfs" ); ?>" class="button"><?php esc_html_e( 'Contribute', 'header-and-footer-scripts'); ?></a></p>
+      <p><a href="<?php echo esc_url( "https://github.com/anandkumar/header-and-footer-scripts" ); ?>" class="button"><?php esc_html_e( 'Contribute', 'header-and-footer-scripts'); ?></a></p>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
     <h3 class="hndle"><?php esc_html_e( 'Join Our Community', 'header-and-footer-scripts'); ?></h3>
     <div class="inside">
       <p><?php esc_html_e( 'We are small WordPress community who welcomes you to join us. Here you will find and share more plugins and themes or even ideas. Ideas are not limited to WordPress. It could be vague or liberal. This is why we are "Digital Liberation .ORG', 'header-and-footer-scripts'); ?></p>
-      <p><a href="<?php echo esc_url( "http://digitalliberation.org/?utm_source=wpdash_hfs" ); ?>" class="button"><?php esc_html_e( 'Join Digital Liberation', 'header-and-footer-scripts'); ?></a></p>
+      <p><a href="<?php echo esc_url( "https://github.com/anandkumar/header-and-footer-scripts" ); ?>" class="button"><?php esc_html_e( 'Join Digital Liberation', 'header-and-footer-scripts'); ?></a></p>
     </div>
   </div>
 
