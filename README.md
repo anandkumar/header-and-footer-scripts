@@ -35,7 +35,7 @@ You will have to warp your code with proper tags. And this plugin will not execu
 Latest Documentation is available at [this wiki](https://github.com/anandkumar/header-and-footer-scripts/wiki)
 
 ## Support
-This free plugin is supported for free at [Github Discussions](https://github.com/anandkumar/header-and-footer-scripts/discussions)
+This free plugin is supported for free at [WordPress Forum](https://wordpress.org/support/plugin/header-and-footer-scripts/)
 
 ## Copyright and License
 
