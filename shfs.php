@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: https://github.com/anandkumar/header-and-footer-scripts
  * Description: Essential WordPress plugin for almost every website to insert codes like Javascript and CSS. Inserting script to your wp_head and wp_footer made easy.
- * Version: 2.2.1
+ * Version: 2.2.2
  * Author: Anand Kumar
  * Author URI: http://www.anandkumar.net
  * Text Domain: header-and-footer-scripts

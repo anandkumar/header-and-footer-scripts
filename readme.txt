@@ -3,10 +3,10 @@
 Contributors: anand_kumar, digitalliberation
 Donate link: https://github.com/anandkumar/header-and-footer-scripts
 Tags: head, header, footer, scripts, post, admin
-Requires at least: 4.0
+Requires at least: 4.6
 Tested up to: 6.7.1
-Stable tag: 2.2.1
-Requires PHP: 5.6
+Stable tag: 2.2.2
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
