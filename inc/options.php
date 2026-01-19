@@ -21,6 +21,17 @@
 
             <?php settings_fields( 'header-and-footer-scripts' ); ?>
 
+            <h3 class="shfs-labels" for="shfs_script_access_level"><?php esc_html_e( 'Who can add scripts to posts?', 'header-and-footer-scripts'); ?></h3>
+             <p>
+                 <select name="shfs_script_access_level" id="shfs_script_access_level">
+                     <option value="manage_options" <?php selected( get_option( 'shfs_script_access_level', 'manage_options' ), 'manage_options' ); ?>><?php esc_html_e('Administrator Only', 'header-and-footer-scripts'); ?></option>
+                     <option value="edit_others_posts" <?php selected( get_option( 'shfs_script_access_level', 'manage_options' ), 'edit_others_posts' ); ?>><?php esc_html_e('Administrator & Editor', 'header-and-footer-scripts'); ?></option>
+                     <option value="publish_posts" <?php selected( get_option( 'shfs_script_access_level', 'manage_options' ), 'publish_posts' ); ?>><?php esc_html_e('Administrator, Editor & Author', 'header-and-footer-scripts'); ?></option>
+                 </select>
+             </p>
+             <p class="description"><?php esc_html_e( 'Select the minimum capability required to add scripts to posts using the meta box.', 'header-and-footer-scripts'); ?></p>
+             <hr />
+
             <h3 class="shfs-labels" for="shfs_insert_header"><?php esc_html_e( 'Scripts in header:', 'header-and-footer-scripts'); ?></h3>
             <p><?php esc_html_e( 'The following script, if any, will be inserted into the &lt;head&gt; section using wp_head hook.', 'header-and-footer-scripts'); ?></p>
             <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea>

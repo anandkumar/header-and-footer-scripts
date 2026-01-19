@@ -57,10 +57,15 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer', 'trim' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_header_priority', 'intval' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer_priority', 'intval' );
+			register_setting( 'header-and-footer-scripts', 'shfs_script_access_level' );
+
 
 			// add meta box to all post types
 			foreach ( get_post_types( '', 'names' ) as $type ) {
-				add_meta_box('shfs_all_post_meta', esc_html__('Insert Script to &lt;head&gt;', 'header-and-footer-scripts'), 'shfs_meta_setup', $type, 'normal', 'high');
+				$access_level = get_option( 'shfs_script_access_level', 'manage_options' );
+				if ( current_user_can( $access_level ) ) {
+					add_meta_box('shfs_all_post_meta', esc_html__('Insert Script to &lt;head&gt;', 'header-and-footer-scripts'), 'shfs_meta_setup', $type, 'normal', 'high');
+				}
 			}
 
 			add_action('save_post','shfs_post_meta_save');
@@ -134,6 +139,12 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			if (!current_user_can('edit_post', $post_id))
 				return $post_id;
 
+		}
+
+		// check configured access level
+		$access_level = get_option( 'shfs_script_access_level', 'manage_options' );
+		if ( ! current_user_can( $access_level ) ) {
+			return $post_id;
 		}
 
 		$current_data = get_post_meta($post_id, '_inpost_head_script', TRUE);
