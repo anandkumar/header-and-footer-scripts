@@ -1,0 +1,9 @@
+# WordPress
+/node_modules
+/vendor
+/*.zip
+/assets
+.DS_Store
+.idea
+.vscode
+*.log

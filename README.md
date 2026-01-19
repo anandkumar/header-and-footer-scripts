@@ -4,7 +4,7 @@ Header and Footer Scripts plugin allows you to add scripts to WordPress site's <
 
 ---
 
-If you are running a WordPress site then sooner or later you need to insert some kind of code to your website. It is most likley a web analytics code like Google Analytics or may be social media script or some CSS stylesheet or may be Custom fonts. This plugin will do all the magic. Even if you want to insert those codes in a single post or page.
+If you are running a WordPress site then sooner or later you need to insert some kind of code to your website. It is most likley a web analytics code like Google Analytics or may be social media script or some CSS stylesheet or may be Custom fonts. This plugin will do all the magic. Even if you want to insert those codes in a custom post type.
 
 All you have to do is adding appropriate html code.
 
@@ -37,8 +37,14 @@ Latest Documentation is available at [this wiki](https://github.com/anandkumar/h
 ## Support
 This free plugin is supported for free at [WordPress Forum](https://wordpress.org/support/plugin/header-and-footer-scripts/)
 
+## Changelog
+
+### 2.3.0
+* Fix: Stored Cross-Site Scripting (XSS) vulnerability.
+* New Feature: Add minimum capability required to add scripts to posts.
+
 ## Copyright and License
 
 This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2013&thinsp;&ndash;&thinsp;2020 &copy; [Anand Kumar](http://www.anandkumar.net).
+2013&thinsp;&ndash;&thinsp;2026 &copy; [Anand Kumar](http://www.anandkumar.net).

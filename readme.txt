@@ -1,12 +1,12 @@
 === Header and Footer Scripts ===
 
-Contributors: anand_kumar, digitalliberation
+Contributors: anand_kumar
 Donate link: https://github.com/anandkumar/header-and-footer-scripts
-Tags: head, header, footer, scripts, post, admin
+Tags: head, header, footer, scripts, post
 Requires at least: 4.6
-Tested up to: 6.7.1
-Stable tag: 2.2.2
-Requires PHP: 7.4
+Tested up to: 6.9
+Stable tag: 2.3.0
+Requires PHP: 8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,10 @@ A. I couldn't handle wp.org forums on regular basis. You are suggested to visit 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.3.0 =
+* Fix: Stored Cross-Site Scripting (XSS) vulnerability.
+* New Feature: Add minimum capability required to add scripts to posts.
 
 = 2.2.1 =
 * Updated readme.txt.
