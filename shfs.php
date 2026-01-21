@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: https://github.com/anandkumar/header-and-footer-scripts
  * Description: Essential WordPress plugin for almost every website to insert codes like Javascript and CSS. Inserting script to your wp_head and wp_footer made easy.
- * Version: 2.3.0
+ * Version: 2.3.1
  * Author: Anand Kumar
  * Author URI: http://www.anandkumar.net
  * Text Domain: header-and-footer-scripts
@@ -28,6 +28,10 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+if (! defined('ABSPATH') ) {
+    exit;
+}
 
 define('SHFS_PLUGIN_DIR',str_replace('\\','/',dirname(__FILE__)));
 
@@ -57,7 +61,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer', 'trim' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_header_priority', 'intval' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer_priority', 'intval' );
-			register_setting( 'header-and-footer-scripts', 'shfs_script_access_level' );
+			register_setting( 'header-and-footer-scripts', 'shfs_script_access_level', array( &$this, 'sanitize_access_level' ) );
 
 
 			// add meta box to all post types
@@ -71,20 +75,19 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			add_action('save_post','shfs_post_meta_save');
 		}
 
-		// adds menu item to wordpress admin dashboard
 		function admin_menu() {
-			$page = add_submenu_page( 'options-general.php', esc_html__('Header and Footer Scripts', 'header-and-footer-scripts'), esc_html__('Header and Footer Scripts', 'header-and-footer-scripts'), 'manage_options', __FILE__, array( &$this, 'shfs_options_panel' ) );
+			$page = add_submenu_page( 'options-general.php', esc_html__('Header and Footer Scripts', 'header-and-footer-scripts'), esc_html__('Header and Footer Scripts', 'header-and-footer-scripts'), 'manage_options', 'header-and-footer-scripts', array( &$this, 'shfs_options_panel' ) );
 			}
 
 		function wp_head() {
 			$meta = get_option( 'shfs_insert_header', '' );
 			if ( $meta != '' ) {
-				echo $meta, "\n";
+				echo $meta, "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			$shfs_post_meta = get_post_meta( get_the_ID(), '_inpost_head_script' , TRUE );
 			if ( is_singular() && $shfs_post_meta != '' ) {
-				echo $shfs_post_meta['synth_header_script'], "\n";
+				echo $shfs_post_meta['synth_header_script'], "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 		}
@@ -96,7 +99,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 				$text = do_shortcode( $text );
 
 				if ( $text != '' ) {
-					echo $text, "\n";
+					echo $text, "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 			}
 		}
@@ -104,6 +107,14 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 		function shfs_options_panel() {
 				// Load options page
 				require_once(SHFS_PLUGIN_DIR . '/inc/options.php');
+		}
+
+		function sanitize_access_level( $input ) {
+			$valid_levels = array( 'manage_options', 'edit_others_posts', 'publish_posts' );
+			if ( in_array( $input, $valid_levels ) ) {
+				return $input;
+			}
+			return 'manage_options';
 		}
 	}
 
@@ -118,7 +129,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 		include_once(SHFS_PLUGIN_DIR . '/inc/meta.php');
 
 		// create a custom nonce for submit verification later
-		echo '<input type="hidden" name="shfs_post_meta_noncename" value="' . wp_create_nonce(__FILE__) . '" />';
+		echo '<input type="hidden" name="shfs_post_meta_noncename" value="' . esc_attr( wp_create_nonce('shfs_post_meta_save') ) . '" />';
 	}
 
 	function shfs_post_meta_save($post_id) {
@@ -126,10 +137,10 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 		// make sure data came from our meta box
 		if ( ! isset( $_POST['shfs_post_meta_noncename'] )
-			|| !wp_verify_nonce($_POST['shfs_post_meta_noncename'],__FILE__)) return $post_id;
+			|| !wp_verify_nonce( sanitize_key( $_POST['shfs_post_meta_noncename'] ),'shfs_post_meta_save')) return $post_id;
 
 		// check user permissions
-		if ( $_POST['post_type'] == 'page' ) {
+		if ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) {
 
 			if (!current_user_can('edit_page', $post_id))
 				return $post_id;
@@ -149,7 +160,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 		$current_data = get_post_meta($post_id, '_inpost_head_script', TRUE);
 
-		$new_data = $_POST['_inpost_head_script'];
+		$new_data = isset( $_POST['_inpost_head_script'] ) ? wp_unslash( $_POST['_inpost_head_script'] ) : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		shfs_post_meta_clean($new_data);
 

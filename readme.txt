@@ -5,7 +5,7 @@ Donate link: https://github.com/anandkumar/header-and-footer-scripts
 Tags: head, header, footer, scripts, post
 Requires at least: 4.6
 Tested up to: 6.9
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,16 @@ A. I couldn't handle wp.org forums on regular basis. You are suggested to visit 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.3.1 =
+* Security: Hardened nonce implementation with static action names.
+* Security: Added strict sanitization for access level settings.
+* Security: Improved input validation with isset() checks and wp_unslash().
+* Security: Replaced __FILE__ menu slug to prevent path exposure.
+* Security: Added security warning for privilege delegation.
+* New: Added uninstall.php for clean database removal.
+* Fix: Added proper ABSPATH checks to all files.
+* Improvement: Added phpcs:ignore comments for intentional raw output.
 
 = 2.3.0 =
 * Fix: Stored Cross-Site Scripting (XSS) vulnerability.

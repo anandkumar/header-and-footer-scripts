@@ -4,10 +4,15 @@
  *
  * @package    Header and Footer Scripts
  * @author     Anand Kumar <anand@anandkumar.net>
- * @copyright  Copyright (c) 2013 - 2025, Anand Kumar
+ * @copyright  Copyright (c) 2013 - 2026, Anand Kumar
  * @link       https://github.com/anandkumar/header-and-footer-scripts
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */?>
+ *
+ */
+
+if (! defined('ABSPATH') ) {
+    exit;
+}?>
  <div class="shfs_meta_control">
 
 	<p><?php esc_html_e('The script in the following textbox will be inserted to the &lt;head&gt; section', 'header-and-footer-scripts'); ?>.</p>
