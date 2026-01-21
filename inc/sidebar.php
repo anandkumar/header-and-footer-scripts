@@ -23,9 +23,9 @@ if (! defined('ABSPATH') ) {
   </div>
 
   <div class="postbox">
-    <h3 class="hndle"><?php esc_html_e( 'Contribute or Donate!', 'header-and-footer-scripts'); ?></h3>
+    <h3 class="hndle"><?php esc_html_e( 'Contribute!', 'header-and-footer-scripts'); ?></h3>
     <div class="inside">
-      <p><?php esc_html_e( 'Help us to make this plugin even better. Contributions not necessarily be monetary. Please follow the link to know more and contribute.', 'header-and-footer-scripts'); ?></p>
+      <p><?php esc_html_e( 'Help us to make this plugin even better. Please follow the link to know more and contribute.', 'header-and-footer-scripts'); ?></p>
       <p><a href="<?php echo esc_url( "https://github.com/anandkumar/header-and-footer-scripts" ); ?>" class="button"><?php esc_html_e( 'Contribute', 'header-and-footer-scripts'); ?></a></p>
     </div>
   </div>
@@ -41,7 +41,7 @@ if (! defined('ABSPATH') ) {
   <div class="postbox">
     <h3 class="hndle"><?php esc_html_e( 'Join Our Community', 'header-and-footer-scripts'); ?></h3>
     <div class="inside">
-      <p><?php esc_html_e( 'We are small WordPress community who welcomes you to join us. Here you will find and share more plugins and themes or even ideas. Ideas are not limited to WordPress. It could be vague or liberal. This is why we are "Digital Liberation .ORG', 'header-and-footer-scripts'); ?></p>
+      <p><?php esc_html_e( 'Join the discussions and share your ideas.', 'header-and-footer-scripts'); ?></p>
       <p><a href="<?php echo esc_url( "https://github.com/anandkumar/header-and-footer-scripts/discussions" ); ?>" class="button"><?php esc_html_e( 'Join Discussions', 'header-and-footer-scripts'); ?></a></p>
     </div>
   </div>

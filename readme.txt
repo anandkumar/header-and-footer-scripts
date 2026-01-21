@@ -5,7 +5,7 @@ Donate link: https://github.com/anandkumar/header-and-footer-scripts
 Tags: head, header, footer, scripts, post
 Requires at least: 4.6
 Tested up to: 6.9
-Stable tag: 2.3.1
+Stable tag: 2.4.0
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,13 @@ A. I couldn't handle wp.org forums on regular basis. You are suggested to visit 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.4.0 =
+* New Feature: Added support for wp_body_open hook to insert scripts immediately after body tag.
+* New Feature: Added Syntax Highlighting for script editors in settings page.
+* Improvement: Modernized permission system to use 'unfiltered_html' capability.
+* Improvement: Added settings to allow Authors and Contributors to add scripts.
+* Improvement: Added admin notice for backward compatibility migration.
 
 = 2.3.1 =
 * Security: Hardened nonce implementation with static action names.

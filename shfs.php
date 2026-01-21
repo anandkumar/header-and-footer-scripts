@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: https://github.com/anandkumar/header-and-footer-scripts
  * Description: Essential WordPress plugin for almost every website to insert codes like Javascript and CSS. Inserting script to your wp_head and wp_footer made easy.
- * Version: 2.3.1
+ * Version: 2.4.0
  * Author: Anand Kumar
  * Author URI: http://www.anandkumar.net
  * Text Domain: header-and-footer-scripts
@@ -44,7 +44,12 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			add_action( 'init', array( &$this, 'init' ) );
 			add_action( 'admin_init', array( &$this, 'admin_init' ) );
 			add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
+            add_action( 'admin_notices', array( &$this, 'admin_notices' ) );
+            add_action( 'update_option_shfs_allow_author', array( &$this, 'update_role_author' ), 10, 2 );
+            add_action( 'update_option_shfs_allow_contributor', array( &$this, 'update_role_contributor' ), 10, 2 );
+            add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
 			add_action( 'wp_head', array( &$this, 'wp_head' ), \get_option('shfs_insert_header_priority', 10) );
+            add_action( 'wp_body_open', array( &$this, 'wp_body_open' ), \get_option('shfs_insert_body_priority', 10) );
 			add_action( 'wp_footer', array( &$this, 'wp_footer' ), \get_option('shfs_insert_footer_priority', 10) );
 
 		}
@@ -58,16 +63,18 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 			// register settings for sitewide script
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_header', 'trim' );
+            register_setting( 'header-and-footer-scripts', 'shfs_insert_body', 'trim' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer', 'trim' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_header_priority', 'intval' );
+            register_setting( 'header-and-footer-scripts', 'shfs_insert_body_priority', 'intval' );
 			register_setting( 'header-and-footer-scripts', 'shfs_insert_footer_priority', 'intval' );
-			register_setting( 'header-and-footer-scripts', 'shfs_script_access_level', array( &$this, 'sanitize_access_level' ) );
+            register_setting( 'header-and-footer-scripts', 'shfs_allow_author' );
+            register_setting( 'header-and-footer-scripts', 'shfs_allow_contributor' );
 
 
 			// add meta box to all post types
 			foreach ( get_post_types( '', 'names' ) as $type ) {
-				$access_level = get_option( 'shfs_script_access_level', 'manage_options' );
-				if ( current_user_can( $access_level ) ) {
+				if ( current_user_can( 'unfiltered_html' ) ) {
 					add_meta_box('shfs_all_post_meta', esc_html__('Insert Script to &lt;head&gt;', 'header-and-footer-scripts'), 'shfs_meta_setup', $type, 'normal', 'high');
 				}
 			}
@@ -79,18 +86,52 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			$page = add_submenu_page( 'options-general.php', esc_html__('Header and Footer Scripts', 'header-and-footer-scripts'), esc_html__('Header and Footer Scripts', 'header-and-footer-scripts'), 'manage_options', 'header-and-footer-scripts', array( &$this, 'shfs_options_panel' ) );
 			}
 
+        function admin_enqueue_scripts( $hook ) {
+            if ( 'settings_page_header-and-footer-scripts' !== $hook && 'post.php' !== $hook && 'post-new.php' !== $hook ) {
+                return;
+            }
+
+            // Enqueue code editor for syntax highlighting
+            $settings = wp_enqueue_code_editor( array( 'type' => 'text/html' ) );
+
+            // If the code editor is enabled, we need to initialize it.
+            if ( false !== $settings ) {
+                wp_add_inline_script(
+                    'code-editor',
+                    sprintf(
+                        'jQuery( function() { 
+                            if ( jQuery("#shfs_insert_header").length ) { wp.codeEditor.initialize( "shfs_insert_header", %1$s ); }
+                            if ( jQuery("#shfs_insert_body").length ) { wp.codeEditor.initialize( "shfs_insert_body", %1$s ); }
+                            if ( jQuery("#shfs_insert_footer").length ) { wp.codeEditor.initialize( "shfs_insert_footer", %1$s ); }
+                            if ( jQuery("#shfs_inpost_head_script").length ) { wp.codeEditor.initialize( "shfs_inpost_head_script", %1$s ); }
+                        } );',
+                        wp_json_encode( $settings )
+                    )
+                );
+            }
+        }
+
 		function wp_head() {
 			$meta = get_option( 'shfs_insert_header', '' );
 			if ( $meta != '' ) {
-				echo $meta, "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $meta, "\n"; 
 			}
 
 			$shfs_post_meta = get_post_meta( get_the_ID(), '_inpost_head_script' , TRUE );
 			if ( is_singular() && $shfs_post_meta != '' ) {
-				echo $shfs_post_meta['synth_header_script'], "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $shfs_post_meta['synth_header_script'], "\n"; 
 			}
 
 		}
+
+        function wp_body_open() {
+            if ( !is_admin() && !is_feed() && !is_robots() && !is_trackback() ) {
+                $meta = get_option( 'shfs_insert_body', '' );
+                if ( $meta != '' ) {
+                    echo $meta, "\n";
+                }
+            }
+        }
 
 		function wp_footer() {
 			if ( !is_admin() && !is_feed() && !is_robots() && !is_trackback() ) {
@@ -99,7 +140,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 				$text = do_shortcode( $text );
 
 				if ( $text != '' ) {
-					echo $text, "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo $text, "\n"; 
 				}
 			}
 		}
@@ -109,13 +150,44 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 				require_once(SHFS_PLUGIN_DIR . '/inc/options.php');
 		}
 
-		function sanitize_access_level( $input ) {
-			$valid_levels = array( 'manage_options', 'edit_others_posts', 'publish_posts' );
-			if ( in_array( $input, $valid_levels ) ) {
-				return $input;
-			}
-			return 'manage_options';
-		}
+		function admin_notices() {
+            // Check for previous version option to show notice
+            if ( get_option( 'shfs_script_access_level' ) ) {
+                $dismiss_link = add_query_arg( 'shfs_dismiss_notice', 'true' );
+                if ( isset( $_GET['shfs_dismiss_notice'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                    delete_option( 'shfs_script_access_level' );
+                } else {
+                    ?>
+                    <div class="notice notice-warning is-dismissible">
+                        <p>
+                            <?php esc_html_e( 'Header and Footer Scripts permission system has been updated. Please check the ', 'header-and-footer-scripts'); ?>
+                             <a href="<?php echo esc_url( admin_url( 'options-general.php?page=header-and-footer-scripts' ) ); ?>"><?php esc_html_e( 'Settings', 'header-and-footer-scripts'); ?></a> 
+                            <?php esc_html_e( 'to configure Author/Contributor access if needed.', 'header-and-footer-scripts'); ?>
+                            <a href="<?php echo esc_url( $dismiss_link ); ?>" style="float:right; text-decoration:none;">X</a>
+                        </p>
+                    </div>
+                    <?php
+                }
+            }
+        }
+
+        function update_role_author( $old_value, $new_value ) {
+            $role = get_role( 'author' );
+            if ( 'yes' === $new_value ) {
+                $role->add_cap( 'unfiltered_html' );
+            } else {
+                $role->remove_cap( 'unfiltered_html' );
+            }
+        }
+
+        function update_role_contributor( $old_value, $new_value ) {
+            $role = get_role( 'contributor' );
+            if ( 'yes' === $new_value ) {
+                $role->add_cap( 'unfiltered_html' );
+            } else {
+                $role->remove_cap( 'unfiltered_html' );
+            }
+        }
 	}
 
 	function shfs_meta_setup() {
@@ -153,14 +225,13 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 		}
 
 		// check configured access level
-		$access_level = get_option( 'shfs_script_access_level', 'manage_options' );
-		if ( ! current_user_can( $access_level ) ) {
+		if ( ! current_user_can( 'unfiltered_html' ) ) {
 			return $post_id;
 		}
 
 		$current_data = get_post_meta($post_id, '_inpost_head_script', TRUE);
 
-		$new_data = isset( $_POST['_inpost_head_script'] ) ? wp_unslash( $_POST['_inpost_head_script'] ) : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$new_data = isset( $_POST['_inpost_head_script'] ) ? wp_unslash( $_POST['_inpost_head_script'] ) : null;
 
 		shfs_post_meta_clean($new_data);
 
