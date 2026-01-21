@@ -75,7 +75,7 @@ if (! defined('ABSPATH') ) {
     </div>
     </div>
 
-    <?php require_once(SHFS_PLUGIN_DIR . '/inc/sidebar.php'); ?>
+    <?php require_once(JAMIFY_HFS_PLUGIN_DIR . '/inc/sidebar.php'); ?>
     </div>
   </div>
 </div>

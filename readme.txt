@@ -76,6 +76,7 @@ A. Nope, There is none. If you need more feature send us feedback or feature req
 == Changelog ==
 
 = 2.4.0 =
+* Internal: Refactored codebase to "Jamify HFS" naming standards (`jamify_hfs_` prefix) while maintaining full backward compatibility.
 * New Feature: Added support for wp_body_open hook to insert scripts immediately after body tag.
 * New Feature: Added Syntax Highlighting for script editors in settings page.
 * Improvement: Modernized permission system to use 'unfiltered_html' capability.

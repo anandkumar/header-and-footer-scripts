@@ -13,7 +13,7 @@
 if (! defined('ABSPATH') ) {
     exit;
 }?>
- <div class="shfs_meta_control">
+ <div class="jamify_hfs_meta_control">
 
 	<p><?php esc_html_e('The script in the following textbox will be inserted to the &lt;head&gt; section', 'header-and-footer-scripts'); ?>.</p>
 	<p>
