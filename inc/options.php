@@ -29,13 +29,13 @@ if (! defined('ABSPATH') ) {
             <p><?php esc_html_e( 'By default, only Administrators can add scripts. You can grant this ability to other roles below.', 'header-and-footer-scripts'); ?></p>
             
             <fieldset>
-                <label for="shfs_allow_author">
-                    <input type="checkbox" name="shfs_allow_author" id="shfs_allow_author" value="yes" <?php checked( 'yes', get_option( 'shfs_allow_author' ) ); ?>>
+                <label for="jamify_hfs_allow_author">
+                    <input type="checkbox" name="jamify_hfs_allow_author" id="jamify_hfs_allow_author" value="yes" <?php checked( 'yes', get_option( 'jamify_hfs_allow_author' ) ); ?>>
                     <?php esc_html_e( 'Allow Authors to add scripts (Grants unfiltered_html capability)', 'header-and-footer-scripts'); ?>
                 </label>
                 <br>
-                <label for="shfs_allow_contributor">
-                    <input type="checkbox" name="shfs_allow_contributor" id="shfs_allow_contributor" value="yes" <?php checked( 'yes', get_option( 'shfs_allow_contributor' ) ); ?>>
+                <label for="jamify_hfs_allow_contributor">
+                    <input type="checkbox" name="jamify_hfs_allow_contributor" id="jamify_hfs_allow_contributor" value="yes" <?php checked( 'yes', get_option( 'jamify_hfs_allow_contributor' ) ); ?>>
                     <?php esc_html_e( 'Allow Contributors to add scripts (Grants unfiltered_html capability)', 'header-and-footer-scripts'); ?>
                 </label>
             </fieldset>
@@ -45,26 +45,26 @@ if (! defined('ABSPATH') ) {
             </p>
             <hr />
 
-            <h3 class="shfs-labels" for="shfs_insert_header"><?php esc_html_e( 'Scripts in header:', 'header-and-footer-scripts'); ?></h3>
+            <h3 class="shfs-labels" for="jamify_hfs_insert_header"><?php esc_html_e( 'Scripts in header:', 'header-and-footer-scripts'); ?></h3>
             <p><?php esc_html_e( 'The following script, if any, will be inserted into the &lt;head&gt; section using wp_head hook.', 'header-and-footer-scripts'); ?></p>
-            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="shfs_insert_header" name="shfs_insert_header"><?php echo esc_html( get_option( 'shfs_insert_header' ) ); ?></textarea>
+            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="jamify_hfs_insert_header" name="jamify_hfs_insert_header"><?php echo esc_html( get_option( 'jamify_hfs_insert_header' ) ); ?></textarea>
 
-            <p><label for="shfs_insert_header_priority"><?php esc_html_e('Priority', 'header-and-footer-scripts'); ?></label>
-            <input type="number" value="<?php echo \esc_html( \get_option( 'shfs_insert_header_priority', 10 ) ); ?>" name="shfs_insert_header_priority" id="shfs_insert_header_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p><hr />
+            <p><label for="jamify_hfs_insert_header_priority"><?php esc_html_e('Priority', 'header-and-footer-scripts'); ?></label>
+            <input type="number" value="<?php echo \esc_html( \get_option( 'jamify_hfs_insert_header_priority', 10 ) ); ?>" name="jamify_hfs_insert_header_priority" id="jamify_hfs_insert_header_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p><hr />
 
-            <h3 class="shfs-labels" for="shfs_insert_body"><?php esc_html_e( 'Scripts in body:', 'header-and-footer-scripts'); ?></h3>
+            <h3 class="shfs-labels" for="jamify_hfs_insert_body"><?php esc_html_e( 'Scripts in body:', 'header-and-footer-scripts'); ?></h3>
             <p><?php esc_html_e( 'The following script, if any, will be inserted immediately after the &lt;body&gt; tag using wp_body_open hook.', 'header-and-footer-scripts'); ?></p>
-            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="shfs_insert_body" name="shfs_insert_body"><?php echo esc_html( get_option( 'shfs_insert_body' ) ); ?></textarea>
+            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="jamify_hfs_insert_body" name="jamify_hfs_insert_body"><?php echo esc_html( get_option( 'jamify_hfs_insert_body' ) ); ?></textarea>
 
-            <p><label for="shfs_insert_body_priority"><?php esc_html_e('Priority', 'header-and-footer-scripts'); ?></label>
-            <input type="number" value="<?php echo \esc_html( \get_option( 'shfs_insert_body_priority', 10 ) ); ?>" name="shfs_insert_body_priority" id="shfs_insert_body_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p><hr />
+            <p><label for="jamify_hfs_insert_body_priority"><?php esc_html_e('Priority', 'header-and-footer-scripts'); ?></label>
+            <input type="number" value="<?php echo \esc_html( \get_option( 'jamify_hfs_insert_body_priority', 10 ) ); ?>" name="jamify_hfs_insert_body_priority" id="jamify_hfs_insert_body_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p><hr />
 
-            <h3 class="shfs-labels footerlabel" for="shfs_insert_footer"><?php esc_html_e( 'Scripts in footer:', 'header-and-footer-scripts'); ?></h3>
+            <h3 class="shfs-labels footerlabel" for="jamify_hfs_insert_footer"><?php esc_html_e( 'Scripts in footer:', 'header-and-footer-scripts'); ?></h3>
             <p><?php esc_html_e( 'The following script, if any, will be inserted before &lt;/body&gt; tag using wp_footer hook.', 'header-and-footer-scripts'); ?></p>
-            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="shfs_insert_footer" name="shfs_insert_footer"><?php echo esc_html( get_option( 'shfs_insert_footer' ) ); ?></textarea>
+            <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="jamify_hfs_insert_footer" name="jamify_hfs_insert_footer"><?php echo esc_html( get_option( 'jamify_hfs_insert_footer' ) ); ?></textarea>
 
-            <p><label for="shfs_insert_footer_priority"><?php esc_html_e('Priority', 'header-and-footer-scripts'); ?></label>
-            <input type="number" value="<?php echo \esc_html( \get_option( 'shfs_insert_footer_priority', 10 ) ); ?>" name="shfs_insert_footer_priority" id="shfs_insert_footer_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p>
+            <p><label for="jamify_hfs_insert_footer_priority"><?php esc_html_e('Priority', 'header-and-footer-scripts'); ?></label>
+            <input type="number" value="<?php echo \esc_html( \get_option( 'jamify_hfs_insert_footer_priority', 10 ) ); ?>" name="jamify_hfs_insert_footer_priority" id="jamify_hfs_insert_footer_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p>
 
           <p class="submit">
             <input class="button button-primary" type="submit" name="Submit" value="<?php esc_html_e( 'Save settings', 'header-and-footer-scripts'); ?>" />

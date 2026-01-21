@@ -1,6 +1,6 @@
 === Header and Footer Scripts ===
 
-Contributors: anand_kumar
+Contributors: anand_kumar, jamify
 Donate link: https://github.com/anandkumar/header-and-footer-scripts
 Tags: head, header, footer, scripts, post
 Requires at least: 4.6
