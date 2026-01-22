@@ -5,7 +5,7 @@ Donate link: https://github.com/anandkumar/header-and-footer-scripts
 Tags: head, header, footer, scripts, post
 Requires at least: 4.6
 Tested up to: 6.9
-Stable tag: 2.4.0
+Stable tag: 2.4.1
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,12 @@ A. I couldn't handle wp.org forums on regular basis. You are suggested to visit 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.4.1 =
+* New Feature: Added "Clean on Uninstall" option to allow users to remove all data upon deletion.
+* Fix: Resolved issue where sidebar was not loading on settings page due to deprecated constant.
+* Improvement: Enhanced WPCS compliance with comprehensive DocBlocks and formatting fixes.
+* Improvement: Added strict sanitization to settings authentication to resolve Plugin Check warnings.
 
 = 2.4.0 =
 * Internal: Refactored codebase to "Jamify HFS" naming standards (`jamify_hfs_` prefix) while maintaining full backward compatibility.

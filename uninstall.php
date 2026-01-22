@@ -14,6 +14,10 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
+if ( 'yes' !== get_option( 'jamify_hfs_clean_on_uninstall' ) ) {
+	exit;
+}
+
 delete_option( 'shfs_insert_header' );
 delete_option( 'shfs_insert_footer' );
 delete_option( 'shfs_insert_header_priority' );
@@ -27,3 +31,4 @@ delete_option( 'jamify_hfs_insert_body_priority' );
 delete_option( 'jamify_hfs_insert_footer_priority' );
 delete_option( 'jamify_hfs_allow_author' );
 delete_option( 'jamify_hfs_allow_contributor' );
+delete_option( 'jamify_hfs_clean_on_uninstall' );

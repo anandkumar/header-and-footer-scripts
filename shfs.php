@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: https://github.com/anandkumar/header-and-footer-scripts
  * Description: Essential WordPress plugin for almost every website to insert codes like Javascript and CSS. Inserting script to your wp_head and wp_footer made easy.
- * Version: 2.4.0
+ * Version: 2.4.1
  * Author: Anand Kumar
  * Author URI: http://www.anandkumar.net
  * Text Domain: header-and-footer-scripts
@@ -29,7 +29,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if (! defined('ABSPATH') ) {
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
@@ -39,6 +39,9 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 	class HeaderAndFooterScripts {
 
+		/**
+		 * Constructor.
+		 */
 		public function __construct() {
 
 			add_action( 'init', array( $this, 'init' ) );
@@ -54,11 +57,17 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 		}
 
+		/**
+		 * Load textdomain for internationalization.
+		 */
 		public function init() {
 
 			load_plugin_textdomain( 'header-and-footer-scripts', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 		}
 
+		/**
+		 * Initialize admin settings, migration logic, and meta boxes.
+		 */
 		public function admin_init() {
 
 			// Migration Logic
@@ -86,8 +95,9 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			register_setting( 'header-and-footer-scripts', 'jamify_hfs_insert_header_priority', 'intval' );
 			register_setting( 'header-and-footer-scripts', 'jamify_hfs_insert_body_priority', 'intval' );
 			register_setting( 'header-and-footer-scripts', 'jamify_hfs_insert_footer_priority', 'intval' );
-			register_setting( 'header-and-footer-scripts', 'jamify_hfs_allow_author' );
-			register_setting( 'header-and-footer-scripts', 'jamify_hfs_allow_contributor' );
+			register_setting( 'header-and-footer-scripts', 'jamify_hfs_allow_author', 'sanitize_text_field' );
+			register_setting( 'header-and-footer-scripts', 'jamify_hfs_allow_contributor', 'sanitize_text_field' );
+			register_setting( 'header-and-footer-scripts', 'jamify_hfs_clean_on_uninstall', 'sanitize_text_field' );
 
 
 			// add meta box to all post types
@@ -100,10 +110,18 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			add_action( 'save_post', array( $this, 'post_meta_save' ) );
 		}
 
+		/**
+		 * Register the options page.
+		 */
 		public function admin_menu() {
 			$page = add_submenu_page( 'options-general.php', esc_html__( 'Header and Footer Scripts', 'header-and-footer-scripts' ), esc_html__( 'Header and Footer Scripts', 'header-and-footer-scripts' ), 'manage_options', 'header-and-footer-scripts', array( $this, 'jamify_hfs_options_panel' ) );
 		}
 
+		/**
+		 * Enqueue admin scripts (CodeMirror).
+		 *
+		 * @param string $hook Current admin page hook.
+		 */
 		public function admin_enqueue_scripts( $hook ) {
 			if ( 'settings_page_header-and-footer-scripts' !== $hook && 'post.php' !== $hook && 'post-new.php' !== $hook ) {
 				return;
@@ -129,6 +147,9 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 		}
 
+		/**
+		 * Output scripts in wp_head.
+		 */
 		public function wp_head() {
 			$meta = get_option( 'jamify_hfs_insert_header', '' );
 			if ( '' !== $meta ) {
@@ -141,6 +162,9 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 		}
 
+		/**
+		 * Output scripts in wp_body_open.
+		 */
 		public function wp_body_open() {
 			if ( ! is_admin() && ! is_feed() && ! is_robots() && ! is_trackback() ) {
 				$meta = get_option( 'jamify_hfs_insert_body', '' );
@@ -150,6 +174,9 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 		}
 
+		/**
+		 * Output scripts in wp_footer.
+		 */
 		public function wp_footer() {
 			if ( ! is_admin() && ! is_feed() && ! is_robots() && ! is_trackback() ) {
 				$text = get_option( 'jamify_hfs_insert_footer', '' );
@@ -162,11 +189,17 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 		}
 
+		/**
+		 * Render the plugin options page.
+		 */
 		public function jamify_hfs_options_panel() {
 			// Load options page
 			require_once JAMIFY_HFS_PLUGIN_DIR . '/inc/options.php';
 		}
 
+		/**
+		 * Display admin notices (e.g. migration warning).
+		 */
 		public function admin_notices() {
 			// Check for previous version option to show notice
 			if ( get_option( 'shfs_script_access_level' ) ) {
@@ -188,6 +221,12 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 		}
 
+		/**
+		 * Update 'author' role capabilities when option changes.
+		 *
+		 * @param mixed $old_value Old option value.
+		 * @param mixed $new_value New option value.
+		 */
 		public function update_role_author( $old_value, $new_value ) {
 			$role = get_role( 'author' );
 			if ( 'yes' === $new_value ) {
@@ -197,6 +236,12 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 		}
 
+		/**
+		 * Update 'contributor' role capabilities when option changes.
+		 *
+		 * @param mixed $old_value Old option value.
+		 * @param mixed $new_value New option value.
+		 */
 		public function update_role_contributor( $old_value, $new_value ) {
 			$role = get_role( 'contributor' );
 			if ( 'yes' === $new_value ) {
@@ -206,6 +251,9 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 		}
 
+		/**
+		 * Render the post meta box.
+		 */
 		public function meta_setup() {
 			global $post;
 
@@ -220,6 +268,12 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			echo '<input type="hidden" name="jamify_hfs_post_meta_noncename" value="' . esc_attr( wp_create_nonce( 'jamify_hfs_post_meta_save' ) ) . '" />';
 		}
 
+		/**
+		 * Save post meta data.
+		 *
+		 * @param int $post_id The ID of the post being saved.
+		 * @return int Post ID.
+		 */
 		public function post_meta_save( $post_id ) {
 			// authentication checks
 
@@ -251,7 +305,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 			$current_data = get_post_meta( $post_id, '_inpost_head_script', true );
 
-			$new_data = isset( $_POST['_inpost_head_script'] ) ? wp_unslash( $_POST['_inpost_head_script'] ) : null;
+			$new_data = isset( $_POST['_inpost_head_script'] ) ? wp_unslash( $_POST['_inpost_head_script'] ) : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Intentional raw input for script insertion.
 
 			$this->post_meta_clean( $new_data );
 
@@ -272,6 +326,11 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			return $post_id;
 		}
 
+		/**
+		 * Clean empty values from the meta array.
+		 *
+		 * @param array $arr The array to clean.
+		 */
 		public function post_meta_clean( &$arr ) {
 
 			if ( is_array( $arr ) ) {

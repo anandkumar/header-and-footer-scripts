@@ -10,7 +10,7 @@
  *
  */
 
-if (! defined('ABSPATH') ) {
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }?>
  <div class="jamify_hfs_meta_control">

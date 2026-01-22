@@ -9,7 +9,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-if (! defined('ABSPATH') ) {
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }?>
 <div class="wrap">
@@ -64,7 +64,18 @@ if (! defined('ABSPATH') ) {
             <textarea style="width:98%;font-family:monospace;" rows="10" cols="57" id="jamify_hfs_insert_footer" name="jamify_hfs_insert_footer"><?php echo esc_html( get_option( 'jamify_hfs_insert_footer' ) ); ?></textarea>
 
             <p><label for="jamify_hfs_insert_footer_priority"><?php esc_html_e('Priority', 'header-and-footer-scripts'); ?></label>
-            <input type="number" value="<?php echo \esc_html( \get_option( 'jamify_hfs_insert_footer_priority', 10 ) ); ?>" name="jamify_hfs_insert_footer_priority" id="jamify_hfs_insert_footer_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p>
+            <input type="number" value="<?php echo \esc_html( \get_option( 'jamify_hfs_insert_footer_priority', 10 ) ); ?>" name="jamify_hfs_insert_footer_priority" id="jamify_hfs_insert_footer_priority" style="width:6em;" /> <?php \esc_html_e('Default', 'header-and-footer-scripts'); ?>: 10</p><hr />
+
+            <h3 class="shfs-labels"><?php esc_html_e( 'Uninstall Settings', 'header-and-footer-scripts'); ?></h3>
+            <fieldset>
+                <label for="jamify_hfs_clean_on_uninstall">
+                    <input type="checkbox" name="jamify_hfs_clean_on_uninstall" id="jamify_hfs_clean_on_uninstall" value="yes" <?php checked( 'yes', get_option( 'jamify_hfs_clean_on_uninstall' ) ); ?>>
+                    <?php esc_html_e( 'Delete all data on uninstall', 'header-and-footer-scripts'); ?>
+                </label>
+            </fieldset>
+            <p class="description" style="color: #ea580c; font-weight: bold;">
+                <?php esc_html_e( 'Warning: If checked, all scripts and settings will be permanently deleted when you delete this plugin. This cannot be undone.', 'header-and-footer-scripts'); ?>
+            </p>
 
           <p class="submit">
             <input class="button button-primary" type="submit" name="Submit" value="<?php esc_html_e( 'Save settings', 'header-and-footer-scripts'); ?>" />
