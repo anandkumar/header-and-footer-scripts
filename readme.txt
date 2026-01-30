@@ -6,7 +6,7 @@ Tags: head, header, footer, scripts, post
 Requires at least: 4.6
 Tested up to: 6.9
 Stable tag: 2.4.1
-Requires PHP: 8.2
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,8 @@ Header and Footer Scripts plugin allows you to add scripts to WordPress site's <
 If you are running a WordPress site then sooner or later you need to insert some kind of code to your website. It is most likley a web analytics code like Google Analytics or may be social media script or some CSS stylesheet or may be Custom fonts. This plugin will do all the magic. Even if you want to insert those codes in a custom post type.
 
 All you have to do is adding appropriate html code.
+
+**Note:** Although this plugin requires a minimum PHP version of 5.6, it is highly recommended to update to the latest PHP stack for better security and performance.
 
 Don't forget to wrap your code with proper tags.
 
