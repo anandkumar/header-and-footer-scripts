@@ -1,0 +1,157 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Header and Footer Scripts 2.4.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/header-and-footer-scripts\n"
+"POT-Creation-Date: 2026-02-01 12:05:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-02-01 12:10:00+00:00\n"
+"Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
+"Language-Team: Hindi <hi_IN@li.org>\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: shfs.php:106
+msgid "Insert Script to &lt;head&gt;"
+msgstr "&lt;head&gt; में स्क्रिप्ट डालें"
+
+#: shfs.php:117
+msgid "Header and Footer Scripts"
+msgstr "हेडर और फुटर स्क्रिप्ट्स"
+
+#: shfs.php:231
+msgid "Header and Footer Scripts permission system has been updated. Please check the "
+msgstr "हेडर और फुटर स्क्रिप्ट्स अनुमति प्रणाली अपडेट कर दी गई है। कृपया जांचें "
+
+#: shfs.php:232
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+#: shfs.php:233
+msgid "to configure Author/Contributor access if needed."
+msgstr "यदि आवश्यक हो तो लेखक/योगदानकर्ता पहुंच को कॉन्फ़िगर करने के लिए।"
+
+#: inc/sidebar.php:18
+msgid "Need Help?"
+msgstr "मदद चाहिए?"
+
+#: inc/sidebar.php:20
+msgid "Check the documentation for usage instructions, or ask a question if you need help."
+msgstr "उपयोग निर्देशों के लिए दस्तावेज़ देखें, या यदि आपको सहायता की आवश्यकता है तो प्रश्न पूछें।"
+
+#: inc/sidebar.php:21
+msgid "Explore Docs and Support"
+msgstr "दस्तावेज़ और सहायता देखें"
+
+#: inc/sidebar.php:26
+msgid "Contribute!"
+msgstr "योगदान करें!"
+
+#: inc/sidebar.php:28
+msgid "Help us to make this plugin even better. Please follow the link to know more and contribute."
+msgstr "इस प्लगइन को और बेहतर बनाने में हमारी मदद करें। अधिक जानने और योगदान करने के लिए कृपया लिंक का अनुसरण करें।"
+
+#: inc/sidebar.php:29
+msgid "Contribute"
+msgstr "योगदान करें"
+
+#: inc/sidebar.php:34 inc/sidebar.php:37
+msgid "Rate 5 Stars"
+msgstr "5 स्टार रेट करें"
+
+#: inc/sidebar.php:36
+msgid "Find this plugin useful rate it 5 stars and leave a nice little comment at wordpress.org. I would really appreciate that."
+msgstr "यदि आपको यह प्लगइन उपयोगी लगता है तो इसे 5 स्टार रेट करें और wordpress.org पर एक अच्छी टिप्पणी छोड़ें। मैं वास्तव में इसकी सराहना करूंगा।"
+
+#: inc/sidebar.php:42
+msgid "Join Our Community"
+msgstr "हमारे समुदाय में शामिल हों"
+
+#: inc/sidebar.php:44
+msgid "Join the discussions and share your ideas."
+msgstr "चर्चा में शामिल हों और अपने विचार साझा करें।"
+
+#: inc/sidebar.php:45
+msgid "Join Discussions"
+msgstr "चर्चा में शामिल हों"
+
+#: inc/options.php:16
+msgid "Header and Footer Scripts - Options"
+msgstr "हेडर और फुटर स्क्रिप्ट्स - विकल्प"
+
+#: inc/options.php:16
+msgid "Read Tutorial"
+msgstr "ट्यूटोरियल पढ़ें"
+
+#: inc/options.php:28
+msgid "Permissions"
+msgstr "अनुमतियाँ"
+
+#: inc/options.php:29
+msgid "By default, only Administrators can add scripts. Use the options below to grant access to other roles."
+msgstr "तयशुदा तौर पर, केवल प्रशासक ही स्क्रिप्ट जोड़ सकते हैं। अन्य भूमिकाओं को पहुंच प्रदान करने के लिए नीचे दिए गए विकल्पों का उपयोग करें।"
+
+#: inc/options.php:34
+msgid "Allow Authors to add scripts"
+msgstr "लेखकों को स्क्रिप्ट जोड़ने की अनुमति दें"
+
+#: inc/options.php:39
+msgid "Allow Contributors to add scripts"
+msgstr "योगदानकर्ताओं को स्क्रिप्ट जोड़ने की अनुमति दें"
+
+#: inc/options.php:44
+msgid "Security Warning: Enabling these options grants the \"unfiltered_html\" capability. This allows users to execute arbitrary JavaScript. Only enable this for trusted users."
+msgstr "सुरक्षा चेतावनी: इन विकल्पों को सक्षम करने से \"unfiltered_html\" क्षमता मिलती है। यह उपयोगकर्ताओं को मनमानी जावास्क्रिप्ट निष्पादित करने की अनुमति देता है। इसे केवल विश्वसनीय उपयोगकर्ताओं के लिए सक्षम करें।"
+
+#: inc/options.php:48
+msgid "Head Scripts (&lt;head&gt;)"
+msgstr "हेड स्क्रिप्ट्स (&lt;head&gt;)"
+
+#: inc/options.php:49
+msgid "Scripts entered here will be output in the &lt;head&gt; section."
+msgstr "यहाँ दर्ज की गई स्क्रिप्ट &lt;head&gt; अनुभाग में आउटपुट होंगी।"
+
+#: inc/options.php:52 inc/options.php:59 inc/options.php:66
+msgid "Priority"
+msgstr "प्राथमिकता"
+
+#: inc/options.php:53 inc/options.php:60 inc/options.php:67
+msgid "Default"
+msgstr "डिफ़ॉल्ट"
+
+#: inc/options.php:55
+msgid "Body Scripts (After &lt;body&gt;)"
+msgstr "बॉडी स्क्रिप्ट्स (&lt;body&gt; के बाद)"
+
+#: inc/options.php:56
+msgid "Scripts entered here will be output immediately after the opening &lt;body&gt; tag."
+msgstr "यहाँ दर्ज की गई स्क्रिप्ट &lt;body&gt; टैग खुलने के तुरंत बाद आउटपुट होंगी।"
+
+#: inc/options.php:62
+msgid "Footer Scripts (Before &lt;/body&gt;)"
+msgstr "फुटर स्क्रिप्ट्स (&lt;/body&gt; से पहले)"
+
+#: inc/options.php:63
+msgid "Scripts entered here will be output immediately before the closing &lt;/body&gt; tag."
+msgstr "यहाँ दर्ज की गई स्क्रिप्ट &lt;/body&gt; टैग बंद होने से ठीक पहले आउटपुट होंगी।"
+
+#: inc/options.php:69
+msgid "Uninstall Code Cleanup"
+msgstr "अनइंस्टॉल कोड सफाई"
+
+#: inc/options.php:73
+msgid "Delete all data on uninstall"
+msgstr "अनइंस्टॉल पर सारा डेटा हटा दें"
+
+#: inc/options.php:77
+msgid "Warning: If checked, all saved scripts and settings will be permanently erased when you delete the plugin. This action cannot be undone."
+msgstr "चेतावनी: यदि चेक किया गया है, तो प्लगइन हटाने पर सभी सहेजी गई स्क्रिप्ट और सेटिंग्स स्थायी रूप से मिटा दी जाएंगी। यह कार्रवाई पूर्ववत नहीं की जा सकती।"
+
+#: inc/options.php:81
+msgid "Save settings"
+msgstr "सेटिंग्स सहेजें"
+
+#: inc/meta.php:18
+msgid "The code below will be inserted into the &lt;head&gt; section of this specific page/post."
+msgstr "नीचे दिया गया कोड इस विशिष्ट पृष्ठ/पोस्ट के &lt;head&gt; अनुभाग में डाला जाएगा।"

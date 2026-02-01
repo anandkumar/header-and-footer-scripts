@@ -5,7 +5,7 @@ Donate link: https://github.com/anandkumar/header-and-footer-scripts
 Tags: head, header, footer, scripts, post
 Requires at least: 4.6
 Tested up to: 6.9
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,9 +13,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Header and Footer Scripts plugin allows you to add scripts to WordPress site's <head> and just before closing <body> tag.
 
 == Description ==
-If you are running a WordPress site then sooner or later you need to insert some kind of code to your website. It is most likley a web analytics code like Google Analytics or may be social media script or some CSS stylesheet or may be Custom fonts. This plugin will do all the magic. Even if you want to insert those codes in a custom post type.
+An essential WordPress plugin to easily insert scripts and styles (like Google Analytics, CSS, etc.) into your website's header and footer.
 
-All you have to do is adding appropriate html code.
+Looking for a way to add Google Analytics, Facebook Pixel, or custom tracking code to your website's header or footer?
+
+Header and Footer Scripts is a simple yet powerful plugin that lets you inject code—such as Google Analytics, custom CSS, Facebook Pixel, and chat widgets—directly into your site's header (`<head>`) or footer.
+
+No bloat, no ads. This lightweight plugin simply does what it says: inserts code into your header and footer efficiently.
+
+All you have to do is add the appropriate HTML code.
 
 **Note:** Although this plugin requires a minimum PHP version of 5.6, it is highly recommended to update to the latest PHP stack for better security and performance.
 
@@ -32,8 +38,9 @@ Or for CSS:
 	</style>
 
 = Why use this plugin: =
-* To insert CSS and JavaScript codes to `<head>` or before `</body>`.
-* To insert code to `<head>` of any single page or post.
+* Insert scripts globally into the header and footer of your entire website.
+* Supports all script types including HTML, JavaScript, and CSS.
+* Add specific scripts to the header of individual posts or pages.
 * To insert code to Custom Post Type [New Feature].
 
 The plugin should be compatible with WooCommerce.
@@ -41,10 +48,10 @@ The plugin should be compatible with WooCommerce.
 = What it does not offer =
 * You can't insert/execute PHP codes.
 
-Almost all WordPress theme do support this "Header and Footer Scripts" plugin. If the codes are not appearing in your site [ask for support] or look at your theme file if they have standard `wp_head` and `wp_footer` hooks.
+Almost all WordPress themes support this "Header and Footer Scripts" plugin. If the codes are not appearing in your site [ask for support] or look at your theme file if they have standard `wp_head` and `wp_footer` hooks.
 
 = Important Links =
-For furhter information you are welcomed to follow these links:
+For further information you are welcomed to follow these links:
 
 * **[Read Documentation][1]**
 * **[Get Support][2]**
@@ -59,7 +66,7 @@ There is nothing special about installation of this plugin. It is as simple as u
 
 Upload the plugin to `/wp-content/plugins` and activate. OR Search "Header and Footer Scripts" from `WP Dashbard --> Plugins --> Add New` then hit Install and then activate.
 
-Once the plugin is activated you will see "Header and Footer Scripts" menu item under setting of WordPress dashboard. Also a meta box on Post and Page edit page.
+Once the plugin is activated you will see "Header and Footer Scripts" menu item under settings of WordPress dashboard. Also a meta box on Post and Page edit page.
 
 == Screenshots ==
 1. Access this page from `Dashboard --> Settings --> Header and Footer Scripts`
@@ -76,6 +83,13 @@ A. I couldn't handle wp.org forums on regular basis. You are suggested to visit 
 A. Nope, There is none. If you need more feature send us feedback or feature request.
 
 == Changelog ==
+
+= 2.4.2 =
+* Fix: Resolved critical issue where scripts added to per-post meta box were not saving.
+* Fix: Corrected CodeMirror editor rendering (borders, height) and gutter visibility (line numbers) in meta box.
+* Improvement: Updated English copy throughout the plugin for better clarity and professionalism.
+* New: Added Hindi (hi_IN) translation.
+* New: Included language template (.pot) and translation files.
 
 = 2.4.1 =
 * New Feature: Added "Clean on Uninstall" option to allow users to remove all data upon deletion.

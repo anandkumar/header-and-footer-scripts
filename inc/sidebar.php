@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
   <div class="postbox">
     <h3 class="hndle"><?php esc_html_e( 'Need Help?', 'header-and-footer-scripts'); ?></h3>
     <div class="inside">
-      <p><?php esc_html_e( 'Read plugin documentation for clarification or how to use it. OR just ask your query.', 'header-and-footer-scripts'); ?></p>
+      <p><?php esc_html_e( 'Check the documentation for usage instructions, or ask a question if you need help.', 'header-and-footer-scripts'); ?></p>
       <p><strong><a href="<?php echo esc_url( "https://github.com/anandkumar/header-and-footer-scripts/wiki" ); ?>" class="button"><?php esc_html_e('Explore Docs and Support', 'header-and-footer-scripts'); ?></a></strong></p>
     </div>
   </div>
