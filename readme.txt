@@ -82,6 +82,13 @@ A. Nope, There is none. If you need more feature send us feedback or feature req
 
 == Changelog ==
 
+= 2.4.2 =
+* Fix: Resolved critical issue where scripts added to per-post meta box were not saving.
+* Fix: Corrected CodeMirror editor rendering (borders, height) and gutter visibility (line numbers) in meta box.
+* Improvement: Updated English copy throughout the plugin for better clarity and professionalism.
+* New: Added Hindi (hi_IN) translation.
+* New: Included language template (.pot) and translation files.
+
 = 2.4.1 =
 * New Feature: Added "Clean on Uninstall" option to allow users to remove all data upon deletion.
 * Fix: Resolved issue where sidebar was not loading on settings page due to deprecated constant.
