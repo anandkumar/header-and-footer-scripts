@@ -3,7 +3,7 @@
  * Plugin Name: Header and Footer Scripts
  * Plugin URI: https://github.com/anandkumar/header-and-footer-scripts
  * Description: Essential WordPress plugin for almost every website to insert codes like Javascript and CSS. Inserting script to your wp_head and wp_footer made easy.
- * Version: 2.4.1
+ * Version: 2.4.2
  * Author: Anand Kumar
  * Author URI: http://www.anandkumar.net
  * Text Domain: header-and-footer-scripts
@@ -130,17 +130,35 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			// Enqueue code editor for syntax highlighting
 			$settings = wp_enqueue_code_editor( array( 'type' => 'text/html' ) );
 
+			// Enqueue admin styles
+			wp_enqueue_style( 'jamify-hfs-admin-css', plugins_url( 'css/jamify-hfs-admin.css', __FILE__ ), array(), '2.4.2' );
+
 			// If the code editor is enabled, we need to initialize it.
 			if ( false !== $settings ) {
 				wp_add_inline_script(
 					'code-editor',
 					sprintf(
 						'jQuery( function() { 
-                            if ( jQuery("#jamify_hfs_insert_header").length ) { wp.codeEditor.initialize( "jamify_hfs_insert_header", %1$s ); }
-                            if ( jQuery("#jamify_hfs_insert_body").length ) { wp.codeEditor.initialize( "jamify_hfs_insert_body", %1$s ); }
-                            if ( jQuery("#jamify_hfs_insert_footer").length ) { wp.codeEditor.initialize( "jamify_hfs_insert_footer", %1$s ); }
-                            if ( jQuery("#jamify_hfs_inpost_head_script").length ) { wp.codeEditor.initialize( "jamify_hfs_inpost_head_script", %1$s ); }
-                        } );',
+							if ( jQuery( "#jamify_hfs_insert_header" ).length ) { wp.codeEditor.initialize( "jamify_hfs_insert_header", %1$s ); }
+							if ( jQuery( "#jamify_hfs_insert_body" ).length ) { wp.codeEditor.initialize( "jamify_hfs_insert_body", %1$s ); }
+							if ( jQuery( "#jamify_hfs_insert_footer" ).length ) { wp.codeEditor.initialize( "jamify_hfs_insert_footer", %1$s ); }
+							if ( jQuery( "#jamify_hfs_inpost_head_script" ).length ) {
+								var inpostSettings = wp.codeEditor.initialize( "jamify_hfs_inpost_head_script", %1$s );
+								var cm = inpostSettings.codemirror;
+								// Fallback for some WP versions where initialize returns jQuery object or structure differs.
+								if ( ! cm && jQuery( "#jamify_hfs_inpost_head_script" ).next( ".CodeMirror" ).length ) {
+									cm = jQuery( "#jamify_hfs_inpost_head_script" ).next( ".CodeMirror" ).get( 0 ).CodeMirror;
+								}
+								if ( cm ) {
+									cm.on( "change", function() {
+										cm.save();
+										jQuery( "#jamify_hfs_inpost_head_script" ).trigger( "change" );
+									} );
+									// Refresh to ensure gutter renders correctly
+									setTimeout( function() { cm.refresh(); }, 1 );
+								}
+							}
+						} );',
 						wp_json_encode( $settings )
 					)
 				);
@@ -279,7 +297,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 
 			// make sure data came from our meta box
 			if ( ! isset( $_POST['jamify_hfs_post_meta_noncename'] )
-			     || ! wp_verify_nonce( sanitize_key( $_POST['jamify_hfs_post_meta_noncename'] ), 'jamify_hfs_post_meta_save' ) ) {
+			     || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['jamify_hfs_post_meta_noncename'] ) ), 'jamify_hfs_post_meta_save' ) ) {
 				return $post_id;
 			}
 

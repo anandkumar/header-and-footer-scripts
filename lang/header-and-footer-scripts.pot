@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Header and Footer Scripts 2.4.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/header-and-footer-scripts\n"
+"POT-Creation-Date: 2026-02-01 12:05:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: shfs.php:106
+msgid "Insert Script to &lt;head&gt;"
+msgstr ""
+
+#: shfs.php:117
+msgid "Header and Footer Scripts"
+msgstr ""
+
+#: shfs.php:231
+msgid "Header and Footer Scripts permission system has been updated. Please check the "
+msgstr ""
+
+#: shfs.php:232
+msgid "Settings"
+msgstr ""
+
+#: shfs.php:233
+msgid "to configure Author/Contributor access if needed."
+msgstr ""
+
+#: inc/sidebar.php:18
+msgid "Need Help?"
+msgstr ""
+
+#: inc/sidebar.php:20
+msgid "Check the documentation for usage instructions, or ask a question if you need help."
+msgstr ""
+
+#: inc/sidebar.php:21
+msgid "Explore Docs and Support"
+msgstr ""
+
+#: inc/sidebar.php:26
+msgid "Contribute!"
+msgstr ""
+
+#: inc/sidebar.php:28
+msgid "Help us to make this plugin even better. Please follow the link to know more and contribute."
+msgstr ""
+
+#: inc/sidebar.php:29
+msgid "Contribute"
+msgstr ""
+
+#: inc/sidebar.php:34 inc/sidebar.php:37
+msgid "Rate 5 Stars"
+msgstr ""
+
+#: inc/sidebar.php:36
+msgid "Find this plugin useful rate it 5 stars and leave a nice little comment at wordpress.org. I would really appreciate that."
+msgstr ""
+
+#: inc/sidebar.php:42
+msgid "Join Our Community"
+msgstr ""
+
+#: inc/sidebar.php:44
+msgid "Join the discussions and share your ideas."
+msgstr ""
+
+#: inc/sidebar.php:45
+msgid "Join Discussions"
+msgstr ""
+
+#: inc/options.php:16
+msgid "Header and Footer Scripts - Options"
+msgstr ""
+
+#: inc/options.php:16
+msgid "Read Tutorial"
+msgstr ""
+
+#: inc/options.php:28
+msgid "Permissions"
+msgstr ""
+
+#: inc/options.php:29
+msgid "By default, only Administrators can add scripts. Use the options below to grant access to other roles."
+msgstr ""
+
+#: inc/options.php:34
+msgid "Allow Authors to add scripts"
+msgstr ""
+
+#: inc/options.php:39
+msgid "Allow Contributors to add scripts"
+msgstr ""
+
+#: inc/options.php:44
+msgid "Security Warning: Enabling these options grants the \"unfiltered_html\" capability. This allows users to execute arbitrary JavaScript. Only enable this for trusted users."
+msgstr ""
+
+#: inc/options.php:48
+msgid "Head Scripts (&lt;head&gt;)"
+msgstr ""
+
+#: inc/options.php:49
+msgid "Scripts entered here will be output in the &lt;head&gt; section."
+msgstr ""
+
+#: inc/options.php:52 inc/options.php:59 inc/options.php:66
+msgid "Priority"
+msgstr ""
+
+#: inc/options.php:53 inc/options.php:60 inc/options.php:67
+msgid "Default"
+msgstr ""
+
+#: inc/options.php:55
+msgid "Body Scripts (After &lt;body&gt;)"
+msgstr ""
+
+#: inc/options.php:56
+msgid "Scripts entered here will be output immediately after the opening &lt;body&gt; tag."
+msgstr ""
+
+#: inc/options.php:62
+msgid "Footer Scripts (Before &lt;/body&gt;)"
+msgstr ""
+
+#: inc/options.php:63
+msgid "Scripts entered here will be output immediately before the closing &lt;/body&gt; tag."
+msgstr ""
+
+#: inc/options.php:69
+msgid "Uninstall Code Cleanup"
+msgstr ""
+
+#: inc/options.php:73
+msgid "Delete all data on uninstall"
+msgstr ""
+
+#: inc/options.php:77
+msgid "Warning: If checked, all saved scripts and settings will be permanently erased when you delete the plugin. This action cannot be undone."
+msgstr ""
+
+#: inc/options.php:81
+msgid "Save settings"
+msgstr ""
+
+#: inc/meta.php:18
+msgid "The code below will be inserted into the &lt;head&gt; section of this specific page/post."
+msgstr ""

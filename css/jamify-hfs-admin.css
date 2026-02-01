@@ -1,0 +1,27 @@
+/**
+ * Admin Styles for Header and Footer Scripts
+ */
+
+/* Fix CodeMirror container in meta box */
+.jamify_hfs_meta_control .CodeMirror {
+    border: 1px solid #ccc;
+    height: auto;
+    min-height: 300px;
+    background: #fff;
+}
+
+.jamify_hfs_meta_control .CodeMirror-scroll {
+    min-height: 300px;
+}
+
+/* Fix gutter visibility */
+.jamify_hfs_meta_control .CodeMirror-gutters {
+    left: 0 !important;
+    background-color: #f7f7f7;
+    border-right: 1px solid #ddd;
+}
+
+/* Ensure proper width matching generic WP inputs */
+.jamify_hfs_meta_control {
+    margin-top: 10px;
+}
