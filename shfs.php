@@ -175,7 +175,7 @@ if ( !class_exists( 'HeaderAndFooterScripts' ) ) {
 			}
 
 			$shfs_post_meta = get_post_meta( get_the_ID(), '_inpost_head_script', true );
-			if ( is_singular() && '' !== $shfs_post_meta ) {
+			if ( is_singular() && ! empty( $shfs_post_meta ) ) {
 				echo $shfs_post_meta['synth_header_script'], "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
